@@ -1,0 +1,2 @@
+class WannagoListsController < ApplicationController
+end
