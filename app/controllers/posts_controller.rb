@@ -21,6 +21,22 @@ class PostsController < ApplicationController
 		@post_comment = PostComment.new
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+		@categories = Category.all
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		@post.update(post_params)
+		@post_comment = PostComment.new
+		render :show
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+	end
 	
 	private
 	def post_params
