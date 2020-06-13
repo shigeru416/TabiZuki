@@ -1,0 +1,34 @@
+<div class="container-fluid">
+ 	<div class="row">
+ 		<div class="col-2 offset-5">
+ 			<h1 class="text-center">旅を書く</h1>
+ 		</div>
+ 	</div>
+</div>
+
+<%= form_for(@post) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title, autofocus: true  %>
+
+	<%= f.label :place, :場所名 %>
+	<%= f.text_field :place, autofocus: true  %>
+
+	<%= f.attachment_field :post_images_images, multiple: true %>
+
+	<%= f.label :category_id, :カテゴリー %>
+	<%= f.collection_select :category_id, @categories, :id, :name, include_blank: "選択してください" %>
+
+	<%= f.label :content, :コメント %>
+	<%= f.text_area :content, autofocus: true  %>
+
+	<%= f.label :tips, :ちょっとした情報（お得情報や注意した方がよいことなど） %>
+	<%= f.text_area :tips, autofocus: true  %>
+
+	<%= f.label :course, :おすすめコース %>
+	<%= f.text_area :course, autofocus: true  %>
+
+	<%= f.label :tag_list, :スペースで区切ってタグを入力 %>
+	<%= f.text_field :tag_list, value: @post.tag_list.join(',') %>
+
+	<%= f.submit %>
+<% end %>
