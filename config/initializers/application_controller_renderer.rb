@@ -7,4 +7,4 @@
 #   )
 # end
 
-Refile.secret_key = <%= ENV['Refile.secret_key'] %>
+Refile.secret_key = "<%= ENV['Refile.secret_key'] %>"
