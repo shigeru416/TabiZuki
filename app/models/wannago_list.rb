@@ -1,0 +1,2 @@
+class WannagoList < ApplicationRecord
+end
