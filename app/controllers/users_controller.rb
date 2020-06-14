@@ -14,14 +14,6 @@ class UsersController < ApplicationController
 		render :show
 	end
 
-	def follows
-
-	end
-
-	def followers
-
-	end
-
 	private
 	def user_params
 		params.require(:user).permit(:name, :image, :introduction)
