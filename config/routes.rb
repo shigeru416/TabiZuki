@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]
 	end
-	resources :users, only: [:show, :edit, :update]
+	resources :users, only: [:show, :edit, :update] do
+		resource :relationships, only: [:create, :destroy]
+	    get 'follows' => 'relationships#follower', as: 'follows'
+	    get 'followers' => 'relationships#followed', as: 'followers'
+	end
 
 	devise_for :admins
 	namespace :admins do

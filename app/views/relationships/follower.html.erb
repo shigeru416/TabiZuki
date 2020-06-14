@@ -1,0 +1,5 @@
+<% if @users.count > 0 %>
+  <%= render '/users/follower', users: @users %>
+<% else %>
+  <%= render '/users/none_follower', users: @users %>
+<% end %>
