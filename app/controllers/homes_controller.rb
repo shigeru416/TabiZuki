@@ -20,4 +20,8 @@ class HomesController < ApplicationController
 		@user_posts = @user_posts.sort_by{|posts| posts.created_at}.reverse
 
 	end
+
+	def favorite_post
+		@user_favorites = current_user.favorites.order(created_at: :desc)
+	end
 end

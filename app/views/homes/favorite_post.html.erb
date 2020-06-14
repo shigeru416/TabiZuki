@@ -1,0 +1,55 @@
+<div id="keyimg">
+	<ul class="bxslider1">
+	  <li><%= image_tag "image1.jpg",class: "slide" %></li>
+	  <li><%= image_tag "image2.jpg",class: "slide" %></li>
+	  <li><%= image_tag "image3.jpg",class: "slide" %></li>
+	  <li><%= image_tag "image4.jpg",class: "slide" %></li>
+	  <li><%= image_tag "image5.jpg",class: "slide" %></li>
+	</ul>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 text-center">
+			<p>お気に入り一覧</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-12">
+			<div class="row">
+				<% if @user_favorites.present? %>
+					<% @user_favorites.each do |favorite|%>
+						<div class="col-4">
+							<div class="row">
+								<div class="col-12 text-center">
+									<%= link_to post_path(favorite.post), data: {"turbolinks" => false } do %>
+										<%= attachment_image_tag(favorite.post.post_images.first, :image, fallback: "no_image.jpg", class: "follower_img") %>
+									<% end %>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 text-center">
+									<%= link_to "#{favorite.post.title}", post_path(favorite.post), data: {"turbolinks" => false }%>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% elsif %>
+					<div class="col-12 text-center">
+						<p>
+							お気に入りがありません
+						</p>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			グーグルマップ
+		</div>
+	</div>
+</div>
+
