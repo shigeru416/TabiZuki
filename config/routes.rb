@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 	root "homes#home"
 	get "/about", to:"homes#about"
 	devise_for :users
-	resources :posts, only:[:new, :create, :index, :show, :edit, :update] do
+	resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
 		resource :post_comments, only: [:create, :destroy]
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]
 	end
-	resources :users, only: [:show]
+	resources :users, only: [:show, :edit, :update]
 
 	devise_for :admins
 	namespace :admins do

@@ -8,7 +8,7 @@
 							<div class="clearfix">
 								<% if current_user == @post.user %>
 									<%= link_to "編集する", edit_post_path(@post), class: "btn btn-xs btn-success"%>
-									<%= link_to "削除する", "#", class: "btn btn-xs btn-success"%>
+									<%= link_to '削除する', post_path(@post), method: :delete, class: "btn btn-xs btn-success" %>
 								<% end %>
 							</div>
 							<div class="clearfix">
@@ -52,7 +52,7 @@
 									<%= tag.name %>
 								<% end %>
 							</div>
-							<div>投稿者：<%= @post.user.name %>
+							<div>投稿者：<%= link_to "#{@post.user.name}", user_path(@post.user), data: {"turbolinks" => false } %>
 							</div>
 						</div>
 					</div>
