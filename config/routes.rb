@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]
 	end
+	resources :users, only: [:show]
 
 	devise_for :admins
 	namespace :admins do

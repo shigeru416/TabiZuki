@@ -1,0 +1,85 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="user_infomation_title text-center">
+							<p>
+								<%= @user.name%>
+								<% if @user == current_user %>
+									<%= link_to "", "#", class: "fas fa-user-edit" %>
+								<% end %>
+							</p>
+					</div>
+					<div class="user_infomation">
+						<div class="row">
+							<div class="col-12 text-center">
+								<%= attachment_image_tag(@user, :image, size:'150x150', class: "rounded-circle  img", fallback: "no_image.jpg") %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-10 offset-1">
+								<div class="row">
+									<div class="col-4 text-center">
+										<p>投稿：<%= @user.posts.count %></p>
+									</div>
+									<div class="col-4 text-center">
+										<p>フォロー：</p>
+									</div>
+									<div class="col-4 text-center">
+										<p>フォロワー：</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="row" style="margin-bottom: 50px">
+							<div class="col-10 offset-1">
+								<div class="row">
+									<div class="col-12 text-center">
+										<%= link_to "フォローする", "#", class: "btn"%>
+										<%= link_to "チャットする", "#", class: "btn"%>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 text-center">
+								<p>行きたい旅リスト</p>
+							</div>
+						</div>
+						<div class="row" style="margin-bottom: 50px">
+							<div class="col-12">
+								<p>行きたい旅1</p>
+								<p>行きたい旅2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-12 text-center">
+							<p>旅投稿一覧</p>
+						</div>
+					</div>
+					<div class="row">
+						<% @user.posts.each do |post| %>
+							<div class="col-4">
+								<div class="row">
+									<div class="col-12 text-center">
+										<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "user_postimg") %>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 text-center">
+										<%= post.title %>
+									</div>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
