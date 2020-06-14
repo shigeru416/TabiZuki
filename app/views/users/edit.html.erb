@@ -19,13 +19,18 @@
 								<%= f.attachment_field :image, autofocus: true %>
 							</div>
 						</div>
-						<div class="row" style="margin-bottom: 50px;">
+						<div class="row" style="margin-bottom: 10px;">
 							<div class="col-12 text-center">
 								<%= f.text_area :introduction, autofocus: true, placeholder: "紹介文"%><br >
 								<%= f.submit "更新する" %>
 							</div>
 						</div>
 						<% end %>
+						<div class="row" style="margin-bottom: 50px;">
+							<div class="col-12 text-center">
+								パスワード・メールアドレス・退会は<%= link_to "こちら", edit_user_registration_path, data: {"turbolinks" => false} %>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-10 offset-1">
 								<div class="row">

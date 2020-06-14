@@ -2,7 +2,7 @@
 <table class="table">
 	<% post.post_comments.each do |post_comment| %>
 	<tr>
-		<td width="50">
+		<td>
 			<%= attachment_image_tag(post_comment.user, :image, :fill, 40, 40, class: "rounded-circle float-left img", fallback: "no-image-mini.jpg") %>
 		</td>
 		<td width="130">

@@ -7,7 +7,7 @@
 							<p>
 								<%= @user.name%>
 								<% if @user == current_user %>
-									<%= link_to "", edit_user_path(@user), class: "fas fa-user-edit" %>
+									<%= link_to "", edit_user_path(@user), class: "fas fa-user-edit", data: {"turbolinks" => false} %>
 								<% end %>
 							</p>
 					</div>
@@ -42,8 +42,8 @@
 							<div class="col-10 offset-1">
 								<div class="row">
 									<div class="col-12 text-center">
-										<%= link_to "フォローする", "#", class: "btn"%>
-										<%= link_to "チャットする", "#", class: "btn"%>
+										<%= link_to "フォローする", "#", class: "btn btn-success", style: "margin-top:10px;" %>
+										<%= link_to "チャットする", "#", class: "btn btn-success", style: "margin-top:10px;" %>
 									</div>
 								</div>
 							</div>
