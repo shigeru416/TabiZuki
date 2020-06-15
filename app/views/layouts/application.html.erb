@@ -21,6 +21,12 @@
 
     <%= yield %>
 
+    <span id="back">
+      <%= link_to "#", data: {"turbolinks" => false} do%>
+        <%= image_tag "arrow.png" %>
+      <% end %>
+    </span>
+
     <%= render "layouts/footer" %>
   </body>
 </html>

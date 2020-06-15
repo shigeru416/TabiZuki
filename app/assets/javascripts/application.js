@@ -19,3 +19,14 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+ 
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 600);
+    event.preventDefault();
+  });
+ 
+});
