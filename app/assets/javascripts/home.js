@@ -8,9 +8,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
 $(document).ready(function(){
   $('.bxslider1').bxSlider({
-    slideWidth: 800, 
+    slideWidth: 1000, 
     pager: false,  
     speed: 2000,
     pause: 6000,  
