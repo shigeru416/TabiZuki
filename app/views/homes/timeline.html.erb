@@ -25,7 +25,7 @@
 							<div class="row">
 								<div class="col-12 text-center">
 									<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>
-										<%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "follower_img") %>
+										<%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "follower_img rounded-lg") %>
 									<% end %>
 								</div>
 							</div>
