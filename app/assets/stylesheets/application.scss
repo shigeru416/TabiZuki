@@ -22,6 +22,18 @@
   clear: both;
 }
 
+/*footerの配置*/
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
 /*いいね・行きたいリストボタン*/
 .wannago{
 	float: left;

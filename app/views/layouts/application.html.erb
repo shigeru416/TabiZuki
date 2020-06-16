@@ -12,22 +12,24 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= render "layouts/customer_header" %>
-    <% elsif admin_signed_in? %>
-      <%= render "layouts/admin_header" %>
-    <% else %>
-      <%= render "layouts/header" %>
-    <% end %>
-
-    <%= yield %>
-
-    <span id="back">
-      <%= link_to "#", data: {"turbolinks" => false} do%>
-        <%= image_tag "arrow.png" %>
+    <div id="wrapper">
+      <% if user_signed_in? %>
+        <%= render "layouts/customer_header" %>
+      <% elsif admin_signed_in? %>
+        <%= render "layouts/admin_header" %>
+      <% else %>
+        <%= render "layouts/header" %>
       <% end %>
-    </span>
 
-    <%= render "layouts/footer" %>
+      <%= yield %>
+
+      <span id="back">
+        <%= link_to "#", data: {"turbolinks" => false} do%>
+          <%= image_tag "arrow.png" %>
+        <% end %>
+      </span>
+
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
