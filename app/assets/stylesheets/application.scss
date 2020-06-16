@@ -129,3 +129,14 @@ footer {
 	max-height:600px;
 	max-width:100%;
 }
+
+/*チャット画面(投稿フォーム配置)*/
+#wrapper1 {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.chat_form {
+  margin-top: auto;
+}

@@ -1,17 +1,14 @@
-<h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
-
-<div class="message" style="width: 400px;">
-  <% @chats.each do |chat| %>
-    <% if chat.user_id == current_user.id %>
-      <p style="text-align: right;"><%= chat.message %></p>
-    <% else %>
-      <p style="text-align: left;"><%= chat.message %></p>
-    <% end %>
-  <% end %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-8 offset-2 text-center">
+			<div id="wrapper1">
+				<div class="chat_area">
+					<%= render "chat", user: @user, chats: @chats %>
+				</div>
+				<div class="chat_form">
+					<%= render "chat_form", chat: @chat %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<%= form_with model: @chat, data: {remote: true} do |f| %>
-  <%= f.text_field :message %>
-  <%= f.hidden_field :room_id %>
-  <%= f.submit "send"%>
-<% end %>
