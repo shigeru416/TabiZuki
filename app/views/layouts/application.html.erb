@@ -12,7 +12,6 @@
   </head>
 
   <body>
-    <div id="wrapper">
       <% if user_signed_in? %>
         <%= render "layouts/customer_header" %>
       <% elsif admin_signed_in? %>
@@ -21,15 +20,18 @@
         <%= render "layouts/header" %>
       <% end %>
 
-      <%= yield %>
+      <main>
 
-      <span id="back">
-        <%= link_to "#", data: {"turbolinks" => false} do%>
-          <%= image_tag "arrow.png" %>
-        <% end %>
-      </span>
+        <%= yield %>
+
+        <span id="back">
+          <%= link_to "#", data: {"turbolinks" => false} do%>
+            <%= image_tag "arrow.png" %>
+          <% end %>
+        </span>
+
+      </main>
 
       <%= render "layouts/footer" %>
-    </div>
   </body>
 </html>

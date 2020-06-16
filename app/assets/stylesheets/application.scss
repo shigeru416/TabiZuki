@@ -23,15 +23,19 @@
 }
 
 /*footerの配置*/
-body,
-#wrapper {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+main{
+  flex: 1;
+}
+
 footer {
-  margin-top: auto;
+  padding-top:80px;
+  padding-bottom:0px;
 }
 
 /*いいね・行きたいリストボタン*/
@@ -47,7 +51,7 @@ footer {
 #back {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 50px;
 }
  
 #back img {

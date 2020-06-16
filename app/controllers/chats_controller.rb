@@ -18,8 +18,19 @@ class ChatsController < ApplicationController
   end
 
   def create
-    @chat = current_user.chats.new(chat_params)
-    @chat.save
+    @current_user_chat = current_user.chats.new(chat_params)
+    @current_user_chat.save
+
+    @user_rooms = UserRoom.where(room_id: @current_user_chat.room_id)
+    @user_rooms.each do |user_room|
+      if user_room.user != current_user
+        @user = user_room.user
+      end
+    end
+
+    @chat = Chat.new(room_id: @current_user_chat.room_id)
+    @chats = UserRoom.find_by(user_id: current_user.id, room_id: @current_user_chat.room_id).room.chats
+
   end
 
   private
