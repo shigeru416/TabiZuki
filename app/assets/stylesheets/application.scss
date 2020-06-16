@@ -22,6 +22,7 @@
   clear: both;
 }
 
+/*いいね・行きたいリストボタン*/
 .wannago{
 	float: left;
 }
@@ -30,6 +31,7 @@
 	floate:left;
 }
 
+/*トップに戻るボタン*/
 #back {
   position: fixed;
   right: 20px;
@@ -38,4 +40,80 @@
  
 #back img {
   width: 50px;
+}
+
+/*ホーム画面*/
+#keyimg{
+	overflow: hidden;
+}
+
+#keyimg .bx-viewport {
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+#keyimg .bx-wrapper {
+ box-shadow: none;
+ border: none;
+ margin: 0 auto;
+}
+
+/*お気に入り一覧画面*/
+.bg02 {
+  background-image: url(bg02.jpg);
+  position:relative;
+}
+
+.favorites_title{
+	font-size:80px;
+	color: black;
+	font-family: 'Kaushan Script', cursive;
+}
+
+/*タイムライン画面*/
+.bg01 {
+  background-image: url(bg01.jpg);
+  position:relative;
+}
+
+.timeline_title{
+	font-size:80px;
+	color: black;
+	font-family: 'Kaushan Script', cursive;
+}
+
+/*お気に入り・タイムライン画面*/
+.post_image{
+	max-height:200px;
+	max-width:100%;
+	transition: 0.5s;
+}
+
+.post_image img:hover{
+	transform: scale(1.1, 1.1);
+}
+
+.fixed-bg {
+  position:relative;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+}
+
+/*閲覧履歴*/
+.browsing_history_img{
+	max-width: 100%;
+	max-height:50px;
+}
+
+/*ユーザーマイページ 旅投稿一覧*/
+.user_postimg{
+	max-height:180px;
+	max-width:100%;
+}
+
+.postimg{
+	max-height:600px;
+	max-width:100%;
 }

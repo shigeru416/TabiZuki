@@ -9,17 +9,26 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.user_id = current_user.id
 		@post.save
-		@post_comment = PostComment.new
-		render :show
-	end
-
-	def index
-		@posts = Post.all
+		redirect_to post_path(@post)
 	end
 
 	def show
 		@post = Post.find(params[:id])
 		@post_comment = PostComment.new
+		
+		new_history = @post.browsing_histories.new
+    	new_history.user_id = current_user.id
+    	if current_user.browsing_histories.exists?(post_id: "#{params[:id]}")
+			old_history = current_user.browsing_histories.find_by(post_id: "#{params[:id]}")
+			old_history.destroy
+	    end
+	    new_history.save
+
+	    histories_stock_limit = 10
+	    histories = current_user.browsing_histories.all
+	    if histories.count > histories_stock_limit
+	      histories[0].destroy
+	    end
 	end
 
 	def edit
@@ -37,7 +46,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to root_path
+		redirect_to user_path(current_user)
 	end
 
 	private

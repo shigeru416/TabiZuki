@@ -9,6 +9,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :place
       t.string :tips
       t.string :course
+      t.string :favorite_count
       t.timestamps
     end
   end

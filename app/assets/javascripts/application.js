@@ -20,6 +20,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+/*トップに戻るボタン*/
 $(document).ready(function() {
  
   $('#back a').on('click',function(event){
@@ -30,3 +31,48 @@ $(document).ready(function() {
   });
  
 });
+
+/*ホーム画面スライダー*/
+$(document).ready(function(){
+  $('.bxslider1').bxSlider({
+    slideWidth: 1000, 
+    pager: false,  
+    speed: 2000,
+    pause: 6000,  
+    auto: true,
+    randomStart: true, 
+    autoHover: true
+  });
+});
+
+/*ユーザー・管理者新規登録、ログインスライダー*/
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+    auto: true,            // 自動スライド
+    speed: 3000,           // スライドするスピード
+    moveSlides: 1,         // 移動するスライド数
+    pause: 6000,           // 自動スライドの待ち時間
+    maxSlides: 1,          // 一度に表示させる最大数
+    slideWidth: 700,      // 各スライドの幅
+	randomStart: true,     // 最初に表示するスライドをランダムに設定
+    autoHover: true,       // ホバー時に自動スライドを停止
+    mode: 'fade',          
+    controls: false        // 矢印消す
+  });
+});
+
+/*投稿詳細画面スライダー*/
+$(document).ready(function(){
+  $('.bxslider2').bxSlider({
+    auto: true,            // 自動スライド
+    speed: 1000,           // スライドするスピード
+    moveSlides: 1,         // 移動するスライド数
+    pause: 3000,           // 自動スライドの待ち時間
+    maxSlides: 1,          // 一度に表示させる最大数
+    slideWidth: 1000,      // 各スライドの幅
+    randomStart: true,     // 最初に表示するスライドをランダムに設定
+    autoHover: true,       // ホバー時に自動スライドを停止
+    mode: 'fade',
+  });
+});
+

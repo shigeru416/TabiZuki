@@ -7,22 +7,17 @@
 
 
 	<div class="row">
-		<div class="col-12"  style="margin-top:40px; margin-bottom:200px;">
+		<div class="col-10 offset-1"  style="margin-top:40px; margin-bottom:200px;">
 			<div class="row">
 				<% if @user_posts.present? %>
 					<% @user_posts.each do |follower_post|%>
 						<div class="col-3">
 							<div class="row">
-								<div class="col-12 text-center">
+								<div class="col-12 text-center post_image">
 									<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>
-										<div><%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "post_image rounded-lg") %>
+										<div><%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "rounded-lg") %>
 										</div>
 									<% end %>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 text-center">
-									<%= link_to "#{follower_post.title}", post_path(follower_post), data: {"turbolinks" => false }%>
 								</div>
 							</div>
 						</div>

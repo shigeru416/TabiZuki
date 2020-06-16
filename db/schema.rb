@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_111834) do
     t.string "place"
     t.string "tips"
     t.string "course"
+    t.string "favorite_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

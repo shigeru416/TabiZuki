@@ -79,7 +79,25 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							直前の閲覧履歴
+							<div class="row">
+								<div class="col-12 text-center">
+									閲覧履歴
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="row">
+										<% current_user.browsing_histories.each do |browsing_history| %>
+												<div class="col-3 text-center" style="margin-top:20px;">
+													<%= attachment_image_tag(browsing_history.post.post_images.first, :image ,fallback: "no_image.jpg", class: "browsing_history_img rounded-lg") %>
+												</div>
+												<div class="col-9" style="margin-top:20px;">
+													<%= browsing_history.post.title %>
+												</div>
+										<% end %>
+									</div>	
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
