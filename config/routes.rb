@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	get "/timeline", to:"homes#timeline"
 	get "/favorite_posts", to:"homes#favorite_post"
 	devise_for :users
-	resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
+	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy] do
 		resource :post_comments, only: [:create, :destroy]
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]

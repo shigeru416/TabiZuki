@@ -9,12 +9,7 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.user_id = current_user.id
 		@post.save
-		@post_comment = PostComment.new
-		render :show
-	end
-
-	def index
-		@posts = Post.all
+		redirect_to post_path(@post)
 	end
 
 	def show
@@ -37,7 +32,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to root_path
+		redirect_to user_path(current_user)
 	end
 
 	private

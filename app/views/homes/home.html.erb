@@ -13,7 +13,7 @@
 		<div class="col-10 offset-1">
 			<div class="row">
 				<div class="col-lg-9">
-					<div class="row">
+					<div class="row" style="margin-bottom:100px;">
 						<div class="col-12">
 							<div class="row">
 								<div class="col-12 text-center">
@@ -22,7 +22,24 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									人気旅
+									<div class="row">
+										<% @posts.order(favorite_count: :desc).each do |post| %>
+												<div class="col-2">
+													<div class="row">
+														<div class="col-12">
+															<%= link_to post_path(post), data: {"turbolinks" => false } do %>
+																<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "rounded-lg") %>
+															<% end %>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-12">
+															<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
+														</div>
+													</div>
+												</div>
+										<% end %>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -38,7 +55,7 @@
 								<div class="col-12">
 									<div class="row">
 										<% @posts.order(created_at: :desc).each do |post| %>
-												<div class="col-3">
+												<div class="col-2">
 													<div class="row">
 														<div class="col-12">
 															<%= link_to post_path(post), data: {"turbolinks" => false } do %>
@@ -67,7 +84,7 @@
 					</div>
 					<div class="row justify-content-center">
 						<% @categories.each do |category| %>
-							<div class="col-4 text-center">
+							<div class="col-6 text-center">
 								<%= category.name %>
 							</div>
 						<% end %>
