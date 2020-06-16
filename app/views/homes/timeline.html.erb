@@ -1,23 +1,13 @@
-<div id="keyimg" style="margin-bottom: 100px;">
-	<ul class="bxslider1">
-	  <li><%= image_tag "home_image1.jpg", class: "slide_image" %></li>
-	  <li><%= image_tag "home_image2.jpg", class: "slide_image" %></li>
-	  <li><%= image_tag "home_image3.jpg", class: "slide_image" %></li>
-	  <li><%= image_tag "home_image4.jpg", class: "slide_image" %></li>
-	  <li><%= image_tag "home_image5.jpg", class: "slide_image" %></li>
-	</ul>
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid fixed-bg bg01">
 	<div class="row">
-		<div class="col-12 text-center">
-			<p>タイムライン</p>
+		<div class="col-12 text-center" style="margin-top:40px;">
+			<span class="timeline_title"><strong>Time Line</strong></span>
 		</div>
 	</div>
 
 
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12"  style="margin-top:40px; margin-bottom:200px;">
 			<div class="row">
 				<% if @user_posts.present? %>
 					<% @user_posts.each do |follower_post|%>

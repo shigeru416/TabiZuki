@@ -3,6 +3,8 @@ class HomesController < ApplicationController
 	end
 
 	def home
+		@categories = Category.all
+		@posts = Post.all
 	end
 
 	def timeline

@@ -22,3 +22,33 @@
 	max-width: 100%;
 	max-height:300px;
 }
+
+.fixed-bg {
+  position:relative;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+}
+ 
+.bg01 {
+  background-image: url(bg01.jpg);
+  position:relative;
+}
+
+.timeline_title{
+	font-size:80px;
+	color: black;
+	font-family: 'Kaushan Script', cursive;
+}
+
+.bg02 {
+  background-image: url(bg02.jpg);
+  position:relative;
+}
+
+.favorites_title{
+	font-size:80px;
+	color: black;
+	font-family: 'Kaushan Script', cursive;
+}
