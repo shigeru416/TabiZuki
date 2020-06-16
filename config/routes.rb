@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	get "/about", to:"homes#about"
 	get "/timeline", to:"homes#timeline"
 	get "/favorite_posts", to:"homes#favorite_post"
+	get 'chat/:id', to:"chats#show", as: 'chat'
 	devise_for :users
 	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy] do
 		resource :post_comments, only: [:create, :destroy]
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
 	    get 'follows' => 'relationships#follower', as: 'follows'
 	    get 'followers' => 'relationships#followed', as: 'followers'
 	end
+	resources :chats, only: [:create]
 
 	devise_for :admins
 	namespace :admins do

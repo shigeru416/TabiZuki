@@ -49,7 +49,7 @@
 										    <%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "btn btn-success", style: "margin-top: 10px;" %>
 										  <% end %>
 
-											<%= link_to "チャットする", "#", class: "btn btn-success", style: "margin-top:10px;" %>
+											<%= link_to "チャットする", chat_path(@user), class: "btn btn-success", style: "margin-top:10px;" %>
 										<% end %>
 									</div>
 								</div>
