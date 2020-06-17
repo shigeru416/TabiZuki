@@ -32,18 +32,6 @@ $(document).ready(function() {
  
 });
 
-/*ホーム画面スライダー*/
-$(document).ready(function(){
-  $('.bxslider1').bxSlider({
-    slideWidth: 1000, 
-    pager: false,  
-    speed: 2000,
-    pause: 6000,  
-    auto: true,
-    randomStart: true, 
-    autoHover: true
-  });
-});
 
 /*ユーザー・管理者新規登録、ログインスライダー*/
 $(document).ready(function(){
