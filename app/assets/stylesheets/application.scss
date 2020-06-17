@@ -58,20 +58,79 @@ footer {
   width: 50px;
 }
 
-/*ホーム画面*/
-#keyimg{
-	overflow: hidden;
+/*　ホーム画面　*/
+.slidebox {
+  position   : relative;
+  max-width  : 100%;
+  min-height  :46vw;
+  margin     : auto;
+  overflow   : hidden;
 }
 
-#keyimg .bx-viewport {
-  background: transparent !important;
-  overflow: visible !important;
+/* ホームスライドショー背景の指定 */
+.slidebox .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 30s infinite;   /* 4画像 × 各5s = 20s */
 }
 
-#keyimg .bx-wrapper {
- box-shadow: none;
- border: none;
- margin: 0 auto;
+/* ホームスライドショー段差で背景画像のアニメーションを実行 */
+.slidebox .src1 {
+  background-image : url(home_image1.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  background-position: center;
+}
+.slidebox .src2 {
+  background-image : url(home_image2.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  background-position: center;
+  animation-delay  : 6s;
+}
+.slidebox .src3 {
+  background-image : url(home_image3.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  background-position: center;
+  animation-delay  : 12s;
+}
+.slidebox .src4 {
+  background-image : url(home_image4.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  background-position: center;
+  animation-delay  : 18s;
+}
+
+.slidebox .src5 {
+  background-image : url(home_image5.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  background-position: center;
+  animation-delay  : 24s;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+   10% { opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+
+/* ホームスライドショー　前面の文字定義 */
+.boxString{
+  position   : absolute;
+  display    : inline-block;
+  top        : 80%;
+  left       : 50%;
+  transform  : translate(-50%,-50%);
+  width:95vw;
+}
+
+.home_title{
+  font-size: 6vw;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /*お気に入り一覧画面*/
@@ -90,7 +149,7 @@ footer {
   background-color:#48D1CC;
 }
 
-/*タイムライン画面*/
+/* タイムライン画面 */
 .bg01 {
   background-image: url(bg01.jpg);
   position:relative;
@@ -106,7 +165,7 @@ footer {
   background-color:#999999;
 }
 
-/*お気に入り・タイムライン画面*/
+/* お気に入り・タイムライン画面 */
 .post_image{
 	max-height:200px;
 	max-width:100%;
@@ -119,7 +178,7 @@ footer {
 
 .fixed-bg {
   position:relative;
-  min-height: 100vh;
+  min-height  :46vw;
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
@@ -137,13 +196,13 @@ footer {
     -ms-transform: translate(-50%, -50%);
 }
 
-/*閲覧履歴*/
+/* 閲覧履歴 */
 .browsing_history_img{
 	max-width: 100%;
 	max-height:50px;
 }
 
-/*ユーザーマイページ 旅投稿一覧*/
+/* ユーザーマイページ 旅投稿一覧 */
 .user_postimg{
 	max-height:180px;
 	max-width:100%;
@@ -154,7 +213,7 @@ footer {
 	max-width:100%;
 }
 
-/*チャット画面(投稿フォーム配置)*/
+/* チャット画面(投稿フォーム配置) */
 #wrapper1 {
   display: flex;
   flex-direction: column;
