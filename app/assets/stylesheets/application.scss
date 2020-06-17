@@ -59,10 +59,20 @@ footer {
 }
 
 /*　ホーム画面　*/
+.ranking_img{
+  width:19vw;
+  height:14vw;
+}
+
+.new_img{
+  width:19vw;
+  height:14vw;
+}
+
 .slidebox {
   position   : relative;
   max-width  : 100%;
-  min-height  :46vw;
+  min-height  :51vw;
   margin     : auto;
   overflow   : hidden;
 }
@@ -146,7 +156,7 @@ footer {
 }
 
 .bg-color02{
-  background-color:#48D1CC;
+  background-color:#CCFFFF;
 }
 
 /* タイムライン画面 */
@@ -162,23 +172,18 @@ footer {
 }
 
 .bg-color01{
-  background-color:#999999;
+  background-color:#DCDCDC;
 }
 
 /* お気に入り・タイムライン画面 */
-.post_image{
-	max-height:200px;
-	max-width:100%;
-	transition: 0.5s;
-}
-
-.post_image img:hover{
-	transform: scale(1.1, 1.1);
+.post_timeline_favorite_img{
+  height:14vw;
+  width:19vw;
 }
 
 .fixed-bg {
   position:relative;
-  min-height  :46vw;
+  min-height  :51vw;
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
@@ -204,13 +209,13 @@ footer {
 
 /* ユーザーマイページ 旅投稿一覧 */
 .user_postimg{
-	max-height:180px;
-	max-width:100%;
+	height:13vw;
+  width:17vw;
 }
 
-.postimg{
-	max-height:600px;
-	max-width:100%;
+/* 投稿詳細スライドショー */
+.posting_img{
+  height:30vw;
 }
 
 /* チャット画面(投稿フォーム配置) */
@@ -222,4 +227,10 @@ footer {
 
 .chat_form {
   margin-top: auto;
+}
+
+/* 投稿画像ホバー */
+.post_img img:hover{
+  transform: scale(1.1, 1.1);
+  transition:0.5s;
 }

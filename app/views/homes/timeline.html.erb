@@ -11,15 +11,11 @@
 			<div class="row">
 				<% if @user_posts.present? %>
 					<% @user_posts.each do |follower_post|%>
-						<div class="col-3">
-							<div class="row">
-								<div class="col-12 text-center post_image">
-									<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>
-										<div><%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "rounded-lg") %>
-										</div>
-									<% end %>
+						<div class="col-3 text-center post_img">
+							<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>
+								<div calss="post_timeline_favorite"><%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg") %>
 								</div>
-							</div>
+							<% end %>
 						</div>
 					<% end %>
 				<% elsif %>

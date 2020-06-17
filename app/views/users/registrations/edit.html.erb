@@ -37,15 +37,15 @@
         </div>
 
         <div class="actions" style="margin-bottom: 30px">
-          <%= f.submit "更新する", class: "btn btn-success" %>
+          <%= f.submit "更新する", class: "btn btn-info" %>
         </div>
       <% end %>
 
       <h3>退会</h3>
 
       <p>退会しますか?</p>
-      <%= link_to "退会しない", root_path, class: "btn btn-success", data: {"turbolinks" => false} %>
-      <%= link_to "退会する", registration_path(resource_name), data: { confirm: "本当に退会しますか?" }, method: :delete, class: "btn btn-success" %>
+      <%= link_to "退会しない", root_path, class: "btn btn-info", data: {"turbolinks" => false} %>
+      <%= link_to "退会する", registration_path(resource_name), data: { confirm: "本当に退会しますか?" }, method: :delete, class: "btn btn-info" %>
 
       <p style="margin-top: 20px;"><%= link_to "戻る", :back %></p>
     </div>
