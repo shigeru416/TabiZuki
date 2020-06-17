@@ -51,7 +51,7 @@ footer {
 #back {
   position: fixed;
   right: 20px;
-  bottom: 50px;
+  bottom: 60px;
 }
  
 #back img {
@@ -81,9 +81,13 @@ footer {
 }
 
 .favorites_title{
-	font-size:80px;
+	font-size: 10vw;
 	color: black;
 	font-family: 'Kaushan Script', cursive;
+}
+
+.bg-color02{
+  background-color:#48D1CC;
 }
 
 /*タイムライン画面*/
@@ -93,9 +97,13 @@ footer {
 }
 
 .timeline_title{
-	font-size:80px;
+	font-size: 10vw;
 	color: black;
 	font-family: 'Kaushan Script', cursive;
+}
+
+.bg-color01{
+  background-color:#999999;
 }
 
 /*お気に入り・タイムライン画面*/
@@ -115,6 +123,18 @@ footer {
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
+}
+
+.box{
+    position: relative;
+}
+.box p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 
 /*閲覧履歴*/

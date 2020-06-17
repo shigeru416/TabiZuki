@@ -65,7 +65,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.bxslider2').bxSlider({
     auto: true,            // 自動スライド
-    speed: 1000,           // スライドするスピード
+    speed: 900,           // スライドするスピード
     moveSlides: 1,         // 移動するスライド数
     pause: 3000,           // 自動スライドの待ち時間
     maxSlides: 1,          // 一度に表示させる最大数

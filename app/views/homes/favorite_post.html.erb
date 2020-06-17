@@ -1,13 +1,13 @@
-<div class="container-fluid fixed-bg bg02">
-	<div class="row">
-		<div class="col-12 text-center" style="margin-top:40px;">
-			<span class="favorites_title"><strong>Favotites</strong></span>
+<div class="container-fluid">
+	<div class="row fixed-bg bg02">
+		<div class="col-12 fixed-bg bg02 box">
+			<p class="favorites_title"><strong>Favotites</strong></p>
 		</div>
 	</div>
 
 
-	<div class="row">
-		<div class="col-10 offset-1" style="margin-top:40px;">
+	<div class="row bg-color02">
+		<div class="col-10 offset-1" style="margin-top:40px; margin-bottom:200px;">
 			<div class="row">
 				<% if @user_favorites.present? %>
 					<% @user_favorites.each do |favorite|%>
