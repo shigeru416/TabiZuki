@@ -282,9 +282,9 @@ footer {
 
 .btn-stitch {
   display: inline-block;
-  background: #668ad8;
+  background: #5bc0de;
   border-radius: 4px;
-  box-shadow: 0px 0px 0px 5px #668ad8;
+  box-shadow: 0px 0px 0px 5px #5bc0de;
   border: dashed 1px #FFF;
 }
 
@@ -295,12 +295,48 @@ footer {
 
 /* ユーザー情報枠 */
 .user_info_detail{
-  border: 5px outset #CCFFFF;
+padding: 1em;
+margin: 2em auto;
+color: #60688c;
+width:100%;
+background: #fff;
+border-top: solid 5px #5bc0de;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 
-/* 行きたいリスト枠 */
-.wannago_detail{
-  border: 5px outset #CCFFFF;
+.wannago_detail {
+    background-color: #fff;
+    margin: 2em 0;
+    padding: 2em;
+    position: relative;
+    z-index: 1;
+}
+.wannago_detail::before,
+.wannago_detail::after {
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.wannago_detail::before {
+    background-color: rgba(255, 255, 255, 0.5);
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.wannago_detail::after {
+    background-color: white;
+    top: 5px;
+    left: 5px;
+    z-index: -2;
+}
+
+.bg05 {
+  background-image: url(bg05.jpg);
+  background-position: center;
+  position:relative;
 }
 
 /* 投稿旅の外枠 */
@@ -310,3 +346,9 @@ footer {
   box-shadow:1px 1px 5px 0px #ccc;
   padding: 0.4vw;
 }
+
+
+
+
+
+

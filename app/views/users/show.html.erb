@@ -1,10 +1,10 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row fixed-bg bg05">
 		<div class="col-10 offset-1">
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="user_infomation_title text-center">
-						<div class="user_info_detail rounded-lg" style="margin-bottom: 20px;">
+						<div class="user_info_detail" style="margin-bottom: 20px;">
 							<p style="margin-top:20px;">
 								<%= @user.name%>
 								<% if @user == current_user %>
@@ -57,7 +57,7 @@
 						<div class="wannago_detail">
 							<div class="row">
 								<div class="col-12 text-center">
-									<p style="margin-top:20px;">行きたい旅リスト</p>
+									<p class="wannago_detail_title" style="margin-bottom:30px;">行きたい旅リスト</p>
 								</div>
 							</div>
 							<div class="row">
