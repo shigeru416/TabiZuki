@@ -14,7 +14,7 @@
 						<div class="col-3 text-center post_img" style="margin-top:1vw;">
 							<%= link_to post_path(favorite.post), data: {"turbolinks" => false } do %>
 								<div calss="post_timeline_favorite">
-									<%= attachment_image_tag(favorite.post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg") %>
+									<%= attachment_image_tag(favorite.post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg mybox") %>
 								</div>
 							<% end %>
 						</div>

@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="user_infomation_title text-center">
-            <div class="user_info_detail rounded-lg" style="margin-bottom: 30px;">
-              <p>
+            <div class="user_info_detail rounded-lg" style="margin-bottom: 20px;">
+              <p style="margin-top:20px;">
                 <%= @user.name %>
                 <% if @user == current_user %>
                   <%= link_to "", edit_user_path(@user), class: "fas fa-user-edit", data: {"turbolinks" => false} %>
@@ -57,10 +57,10 @@
             <div class="wannago_detail">
               <div class="row">
                 <div class="col-12 text-center">
-                  <p>行きたい旅リスト</p>
+                  <p style="margin-top:20px;">行きたい旅リスト</p>
                 </div>
               </div>
-              <div class="row" style="margin-bottom: 50px;">
+              <div class="row">
                 <div class="col-12">
                   <div class="row">
                     <% if @user.wannago_lists.count > 0 %>
@@ -70,7 +70,7 @@
                             <%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>
                           <% end %>
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 text-left">
                           <%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
                         </div>
                       <% end %>
@@ -88,7 +88,7 @@
         <div class="col-lg-9">
           <div class="row">
             <div class="col-12 text-center">
-              <p>フォロワー一覧</p>
+              <p style="margin-top:20px;">フォロワー一覧</p>
             </div>
           </div>
           <div class="row">
