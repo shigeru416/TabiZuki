@@ -54,30 +54,32 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 text-center">
-                <p>行きたい旅リスト</p>
+            <div class="wannago_detail">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <p>行きたい旅リスト</p>
+                </div>
               </div>
-            </div>
-            <div class="row" style="margin-bottom: 50px;">
-              <div class="col-12">
-                <div class="row">
-                  <% if @user.wannago_lists.count > 0 %>
-                    <% @user.wannago_lists.each do |wannago_list|%>
-                      <div class="col-4 text-right">
-                        <%= link_to post_path(wannago_list.post), data: {"turbolinks" => false } do %>
-                          <%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>
-                        <% end %>
-                      </div>
-                      <div class="col-8">
-                        <%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
+              <div class="row" style="margin-bottom: 50px;">
+                <div class="col-12">
+                  <div class="row">
+                    <% if @user.wannago_lists.count > 0 %>
+                      <% @user.wannago_lists.each do |wannago_list|%>
+                        <div class="col-4 text-right">
+                          <%= link_to post_path(wannago_list.post), data: {"turbolinks" => false } do %>
+                            <%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>
+                          <% end %>
+                        </div>
+                        <div class="col-8">
+                          <%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      <div class="col-12 text-center">
+                        <p>行きたい旅を見つけよう</p>
                       </div>
                     <% end %>
-                  <% else %>
-                    <div class="col-12 text-center">
-                      <p>行きたい旅を見つけよう</p>
-                    </div>
-                  <% end %>
+                  </div>
                 </div>
               </div>
             </div>
