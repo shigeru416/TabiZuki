@@ -238,8 +238,42 @@ footer {
 
 /* 閲覧履歴 */
 .browsing_history_img{
-	max-width: 100%;
-	max-height:50px;
+	width: 90%;
+	height:8vh;
+}
+
+.browsing_history_content{
+  background-color: #fff; /* 背景色 */
+  border: 1px solid #ccc; /* 線の太さ・種類・色 */
+  box-shadow:1px 1px 6px 0px #ccc;
+  -moz-box-shadow:1px 1px 6px 0px #ccc;
+  -webkit-box-shadow:1px 1px 6px 0px #ccc;
+  -o-box-shadow:1px 1px 6px 0px #ccc;
+  margin: 20px 5px; /* 外側の余白 上下・左右 */
+  padding: 30px 20px 20px 20px; /* 内側の余白 上・右・下・左 */
+  position: relative;
+  z-index: 0;
+}
+.browsing_history_content:after{
+  background-color: #17a2b8; /* マステ色*/
+  background-position: 0 0, 12px 12px;
+  background-size: 24px 24px;
+  border-left: 2px dotted rgba(255,255,255,0.9);
+  border-right: 2px dotted rgba(255,255,255,0.9);
+  box-shadow: 0 0 5px rgba(255,255,255,0.5);
+  content: '閲覧履歴';
+  display: block;
+  margin: 0 0 10px 0;
+  padding: 5px 20px;
+  color: #fff;  /* マステ部分文字色 */
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
 }
 
 /* ユーザーマイページ 旅投稿一覧 */
@@ -248,9 +282,15 @@ footer {
   width:17vw;
 }
 
-/* 投稿詳細スライドショー */
+/* 投稿詳細スライドショー・背景 */
 .posting_img{
   height:39vw;
+}
+
+.bg06 {
+  background-image: url(bg06.jpg);
+  background-position: top;
+  position:relative;
 }
 
 /* チャット画面(投稿フォーム配置) */
@@ -282,9 +322,9 @@ footer {
 
 .btn-stitch {
   display: inline-block;
-  background: #5bc0de;
+  background: #17a2b8;
   border-radius: 4px;
-  box-shadow: 0px 0px 0px 5px #5bc0de;
+  box-shadow: 0px 0px 0px 5px #17a2b8;
   border: dashed 1px #FFF;
 }
 
@@ -300,7 +340,7 @@ margin: 2em auto;
 color: #60688c;
 width:100%;
 background: #fff;
-border-top: solid 5px #5bc0de;
+border-top: solid 5px #17a2b8;
 box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -346,9 +386,3 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   box-shadow:1px 1px 5px 0px #ccc;
   padding: 0.4vw;
 }
-
-
-
-
-
-
