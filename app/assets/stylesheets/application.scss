@@ -143,9 +143,27 @@ footer {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* タイムライン画面 */
+.bg01 {
+  background-image: url(bg01.jpg);
+  background-position: top;
+  position:relative;
+}
+
+.timeline_title{
+  font-size: 10vw;
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.bg-color01{
+  background-color:#DCDCDC;
+}
+
 /*お気に入り一覧画面*/
 .bg02 {
   background-image: url(bg02.jpg);
+  background-position: top;
   position:relative;
 }
 
@@ -159,23 +177,41 @@ footer {
   background-color:#CCFFFF;
 }
 
-/* タイムライン画面 */
-.bg01 {
-  background-image: url(bg01.jpg);
+/* ランキング一覧画面 */
+.bg03 {
+  background-image: url(bg03.jpg);
+  background-position: top;
   position:relative;
 }
 
-.timeline_title{
-	font-size: 10vw;
-	color: black;
-	font-family: 'Kaushan Script', cursive;
+.ranking_title{
+  font-size: 10vw;
+  color: black;
+  font-family: 'Kaushan Script', cursive;
 }
 
-.bg-color01{
-  background-color:#DCDCDC;
+.bg-color03{
+  background-color:#FFFFCC;
 }
 
-/* お気に入り・タイムライン画面 */
+/* 新規投稿一覧画面 */
+.bg04 {
+  background-image: url(bg04.jpg);
+  background-position: center;
+  position:relative;
+}
+
+.new_title{
+  font-size: 10vw;
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.bg-color04{
+  background-color:#E6FFE9;
+}
+
+/* お気に入り・タイムライン画面・ランキング画面・新規投稿一覧画面*/
 .post_timeline_favorite_img{
   height:14vw;
   width:19vw;
@@ -186,7 +222,6 @@ footer {
   min-height  :51vw;
   background-attachment: fixed;
   background-size: cover;
-  background-position: top;
 }
 
 .box{
@@ -231,6 +266,7 @@ footer {
 
 /* 投稿画像ホバー */
 .post_img img:hover{
+
   transform: scale(1.1, 1.1);
   transition:0.5s;
 }

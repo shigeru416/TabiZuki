@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 	root "homes#home"
 	get "/about", to:"homes#about"
 	get "/timeline", to:"homes#timeline"
-	get "/favorite_posts", to:"homes#favorite_post"
+	get "/favorites", to:"homes#favorites"
+	get "/ranking", to:"homes#ranking"
+	get "/new", to:"homes#new"
 	get 'chat/:id', to:"chats#show", as: 'chat'
 	devise_for :users
 	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy] do

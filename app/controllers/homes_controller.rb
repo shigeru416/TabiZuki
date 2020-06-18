@@ -23,7 +23,15 @@ class HomesController < ApplicationController
 
 	end
 
-	def favorite_post
+	def favorites
 		@user_favorites = current_user.favorites.order(created_at: :desc)
+	end
+
+	def ranking
+		@posts = Post.all
+	end
+
+	def new
+		@posts = Post.all
 	end
 end

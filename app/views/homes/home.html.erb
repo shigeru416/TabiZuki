@@ -22,7 +22,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
-										<% @posts.order(favorite_count: :desc).each do |post| %>
+										<% @posts.order(favorite_count: :desc).first(6).each do |post| %>
 												<div class="col-4">
 													<div class="row post_img">
 														<div class="col-12 text-center">
@@ -41,6 +41,11 @@
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-12 text-right" style="margin-top:1vw;">
+									<%= link_to ">>もっと見る", ranking_path, data: {"turbolinks" => false} %>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -53,7 +58,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
-										<% @posts.order(created_at: :desc).each do |post| %>
+										<% @posts.order(created_at: :desc).first(6).each do |post| %>
 												<div class="col-4">
 													<div class="row post_img">
 														<div class="col-12 text-center">
@@ -70,6 +75,11 @@
 												</div>
 										<% end %>
 									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 text-right" style="margin-top:1vw;">
+									<%= link_to ">>もっと見る", new_path, data: {"turbolinks" => false } %>
 								</div>
 							</div>
 						</div>
