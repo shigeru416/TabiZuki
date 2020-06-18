@@ -7,11 +7,11 @@
 
 
 	<div class="row bg-color01">
-		<div class="col-10 offset-1"  style="margin-top:40px; margin-bottom:200px;">
+		<div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;">
 			<div class="row">
 				<% if @user_posts.present? %>
 					<% @user_posts.each do |follower_post|%>
-						<div class="col-3 text-center post_img">
+						<div class="col-3 text-center post_img" style="margin-top:1vw;">
 							<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>
 								<div calss="post_timeline_favorite"><%= attachment_image_tag(follower_post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg") %>
 								</div>

@@ -24,7 +24,7 @@
 									<div class="row">
 										<% @posts.order(favorite_count: :desc).first(6).each do |post| %>
 												<div class="col-4">
-													<div class="row post_img">
+													<div class="row post_img" style="margin-top:1vw;">
 														<div class="col-12 text-center">
 															<%= link_to post_path(post), data: {"turbolinks" => false } do %>
 																<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "ranking_img rounded-lg") %>
@@ -32,7 +32,7 @@
 														</div>
 													</div>
 													<div class="row">
-														<div class="col-12 text-center">
+														<div class="col-12 text-center" style="margin-top:1vw;">
 															<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
 														</div>
 													</div>
@@ -57,7 +57,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="row">
+									<div class="row" style="margin-top:1vw;">
 										<% @posts.order(created_at: :desc).first(6).each do |post| %>
 												<div class="col-4">
 													<div class="row post_img">
@@ -68,7 +68,7 @@
 														</div>
 													</div>
 													<div class="row">
-														<div class="col-12 text-center">
+														<div class="col-12 text-center" style="margin-top:1vw;">
 															<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
 														</div>
 													</div>
@@ -94,7 +94,7 @@
 					<div class="row justify-content-center">
 						<% @categories.each do |category| %>
 							<div class="col-6 text-center">
-								<%= category.name %>
+								<%= link_to "#{category.name}", category_path(category), data: {"turbolinks" => false} %>
 							</div>
 						<% end %>
 					</div>

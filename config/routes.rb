@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 	    get 'followers' => 'relationships#followed', as: 'followers'
 	end
 	resources :chats, only: [:create]
+	resources :categories, only: [:show]
 
 	devise_for :admins
 	namespace :admins do

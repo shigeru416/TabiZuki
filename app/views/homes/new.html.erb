@@ -7,19 +7,19 @@
 
 
 	<div class="row bg-color04">
-		<div class="col-10 offset-1" style="margin-top:40px; margin-bottom:200px;">
+		<div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;" >
 			<div class="row">
 				<% @posts.order(created_at: :desc).each do |post| %>
-						<div class="col-4">
+						<div class="col-3">
 							<div class="row post_img">
-								<div class="col-12 text-center">
+								<div class="col-12 text-center" style="margin-top:1vw;">
 									<%= link_to post_path(post), data: {"turbolinks" => false } do %>
 										<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "new_img rounded-lg") %>
 									<% end %>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-12 text-center">
+								<div class="col-12 text-center" style="margin-top:1vw;">
 									<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
 								</div>
 							</div>
