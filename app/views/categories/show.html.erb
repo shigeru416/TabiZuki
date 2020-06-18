@@ -1,1 +1,71 @@
-カテゴリー一覧
+<div class="slidebox">
+  <div class="bgImg src1"></div>
+  <div class="bgImg src2"></div>
+  <div class="bgImg src3"></div>
+  <div class="bgImg src4"></div>
+  <div class="bgImg src5"></div>
+  <div class="boxString"><p class="home_title">見つかる。<br>あなた史上の旅。</p></div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="row" style="margin-top:10vw; margin-bottom:10vw;">
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 text-center">
+									<p><%= @category.name %></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="row">
+										<% @category.posts.order(favorite_count: :desc).each do |post| %>
+												<div class="col-4">
+													<div class="row post_img" style="margin-top:1vw;">
+														<div class="col-12 text-center">
+															<%= link_to post_path(post), data: {"turbolinks" => false } do %>
+																<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "ranking_img rounded-lg") %>
+															<% end %>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-12 text-center" style="margin-top:10px;">
+															<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
+														</div>
+													</div>
+												</div>
+										<% end %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3" style="margin-top:10vw;">
+					<div class="row">
+							<div class="col-12 text-center">
+								カテゴリー一覧
+							</div>
+					</div>
+					<div class="row">
+						<% @categories.each do |category| %>
+							<div class="col-6 text-center" style="margin-top:20px;">
+								<%= link_to category_path(category), data: {"turbolinks" => false}, class: "btn btn-stitch w-100" do %>
+								 <p class="name_button" style="margin-top:7px;"><%= category.name %></p>
+								<% end %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<dif class="col-12">
+			グーグルマップ
+		</dif>
+	</div>
+</div>
