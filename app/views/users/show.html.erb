@@ -67,13 +67,14 @@
 									<div class="row">
 										<% if @user.wannago_lists.count > 0 %>
 											<% @user.wannago_lists.each do |wannago_list|%>
-												<div class="col-4 text-right">
+												<div class="col-4 text-right" style="margin-top:1vh;">
 													<%= link_to post_path(wannago_list.post), data: {"turbolinks" => false } do %>
 														<%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>
 													<% end %>
 												</div>
-												<div class="col-8 text-left">
+												<div class="col-8 text-left" style="margin-top:1vh;">
 													<%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
+													<p><%= wannago_list.post.content.truncate(9) %></p>
 												</div>
 											<% end %>
 										<% else %>

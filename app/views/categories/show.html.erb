@@ -27,7 +27,7 @@
 													<div class="row post_img" style="margin-top:1vw;">
 														<div class="col-12 text-center">
 															<%= link_to post_path(post), data: {"turbolinks" => false } do %>
-																<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "ranking_img rounded-lg") %>
+																<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "ranking_img rounded-lg mybox") %>
 															<% end %>
 														</div>
 													</div>
