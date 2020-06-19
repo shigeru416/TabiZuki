@@ -1,10 +1,28 @@
 <h1 id="room"><%= user.name %> さんとのチャット</h1>
-<div class="message mx-auto" style="width: 100%;">
-  <% chats.each do |chat| %>
-    <% if chat.user_id == current_user.id %>
-      <p style="text-align: right;"><%= chat.message %><%= attachment_image_tag(current_user, :image, :fill, 60, 60,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-left:20px;") %></p>
-    <% else %>
-      <p style="text-align: left;"><%= attachment_image_tag(user, :image, :fill, 60, 60,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-right:20px;") %><%= chat.message %></p>
-    <% end %>
-  <% end %>
+<div>
+	<% chats.each do |chat| %>
+		<% if chat.user_id == current_user.id %>
+			<div class="clearfix">
+				<div style="float:right;">
+					<%= attachment_image_tag(current_user, :image, :fill, 80, 80,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-left:20px;", size: "80x80") %>
+				</div>
+				<div style="float:right;">
+					<p style="text-align: right; padding-top: 25px;">
+						<%= chat.message %>
+					</p>
+				</div>
+			</div>
+		<% else %>
+			<div class="clearfix">
+				<div style="float:left;">
+					<%= attachment_image_tag(user, :image, :fill, 80, 80,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-right:20px;", size: "80x80") %>
+				</div>
+				<div style="float:left;">
+					<p style="text-align: left; padding-top: 25px;">
+						<%= chat.message %>
+					</p>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
 </div>

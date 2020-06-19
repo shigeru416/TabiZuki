@@ -11,10 +11,10 @@
 									<%= f.text_field :name, autofocus: true, placeholder: "ニックネーム" %>
 								</div>
 							</div>
-						
 							<div class="row" style="margin-bottom: 10px; margin-top: 10px;">
 								<div class="col-12 text-center">
-									<%= attachment_image_tag(@user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg") %>
+									<%= attachment_image_tag(@user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg", size: "150x150") %><br>
+									<%= f.attachment_field :image %>
 								</div>
 							</div>
 							<div class="row" style="margin-bottom: 10px;">

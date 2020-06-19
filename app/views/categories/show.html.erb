@@ -53,8 +53,8 @@
 					<div class="row">
 						<% @categories.each do |category| %>
 							<div class="col-6 text-center" style="margin-top:20px;">
-								<%= link_to category_path(category), data: {"turbolinks" => false}, class: "btn btn-stitch w-100" do %>
-								 <p class="name_button" style="margin-top:7px;"><%= category.name %></p>
+								<%= link_to category_path(category), data: {"turbolinks" => false}, class: "btn cp_btn" do %>
+								 <p class="name_button" style="margin-top:15px;"><%= category.name %></p>
 								<% end %>
 							</div>
 						<% end %>
