@@ -7,16 +7,16 @@
   <div class="boxString"><p class="home_title">見つかる。<br>あなた史上の旅。</p></div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid bgcolor07">
 	<div class="row">
 		<div class="col-10 offset-1">
 			<div class="row">
 				<div class="col-lg-9">
-					<div class="row" style="margin-top:10vw; margin-bottom:10vw;">
+					<div class="row" style="margin-top:3vw; margin-bottom:3vw;">
 						<div class="col-12">
 							<div class="row">
-								<div class="col-12 text-center">
-									人気旅ランキング
+								<div class="col-12 text-center title">
+									<strong>Ranking</strong>
 								</div>
 							</div>
 							<div class="row">
@@ -51,13 +51,13 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="row">
-								<div class="col-12 text-center">
-									新着旅一覧
+								<div class="col-12 text-center title">
+									<strong>What's new?</strong>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="row" style="margin-top:1vw;">
+									<div class="row">
 										<% @posts.order(created_at: :desc).first(6).each do |post| %>
 												<div class="col-4">
 													<div class="row post_img">
@@ -85,10 +85,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3" style="margin-top:10vw;">
+				<div class="col-lg-3" style="margin-top:3vw;">
 					<div class="row">
-							<div class="col-12 text-center">
-								カテゴリー一覧
+							<div class="col-12 text-center title">
+								<strong>Category</strong>
 							</div>
 					</div>
 					<div class="row">

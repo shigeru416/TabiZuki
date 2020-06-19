@@ -7,16 +7,16 @@
   <div class="boxString"><p class="home_title">見つかる。<br>あなた史上の旅。</p></div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid bgcolor07">
 	<div class="row">
 		<div class="col-10 offset-1">
 			<div class="row">
 				<div class="col-lg-9">
-					<div class="row" style="margin-top:10vw; margin-bottom:10vw;">
+					<div class="row" style="margin-top:3vw; margin-bottom:3vw;">
 						<div class="col-12">
 							<div class="row">
-								<div class="col-12 text-center">
-									<p><%= @category.name %></p>
+								<div class="col-12 text-center title">
+									<strong><%= @category.name %></strong>
 								</div>
 							</div>
 							<div class="row">
@@ -32,7 +32,7 @@
 														</div>
 													</div>
 													<div class="row">
-														<div class="col-12 text-center" style="margin-top:10px;">
+														<div class="col-12 text-center" style="margin-top:1vw; margin-bottom:1vw;">
 															<%= link_to "#{post.title}", post_path(post), data: {"turbolinks" => false }  %>
 														</div>
 													</div>
@@ -44,10 +44,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3" style="margin-top:10vw;">
+				<div class="col-lg-3" style="margin-top:3vw;">
 					<div class="row">
-							<div class="col-12 text-center">
-								カテゴリー一覧
+							<div class="col-12 text-center title">
+								<strong>Category</strong>
 							</div>
 					</div>
 					<div class="row">

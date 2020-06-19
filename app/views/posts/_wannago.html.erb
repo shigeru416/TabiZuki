@@ -1,4 +1,3 @@
-<%= post.title %>
 <% if post.wannago_listed_by?(current_user) %>
 	<%= link_to post_wannago_lists_path(post), method: :delete, remote: true do %> 
 		<i class="fas fa-calendar-check"><%= post.wannago_lists.count %></i>

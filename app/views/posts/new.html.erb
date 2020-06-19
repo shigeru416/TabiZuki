@@ -39,7 +39,7 @@
 				<%= f.text_area :course, autofocus: true, class: "form-control" %>
 				</div>
 				<div class="row post">
-				<%= f.label :tag_list, :スペースで区切ってタグを入力 %><br >
+				<%= f.label :tag_list, :'#でタグを入力' %><br >
 			<%= f.text_field :tag_list, value: @post.tag_list.join(','), class: "form-control"  %>
 			</div>
 			<div class="row">
