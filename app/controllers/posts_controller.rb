@@ -49,6 +49,20 @@ class PostsController < ApplicationController
 		redirect_to user_path(current_user)
 	end
 
+	def index
+	    if  params[:tag_name]
+	    	@posts = Post.tagged_with("#{params[:tag_name]}")
+	    	@posts.each do |post|
+	    		post.tags.each do |tag|
+	    			@tag_name = tag.name
+	    			if params[:tag_name] == @tag_name
+	    				@tag = @tag_name
+	    			end
+	    		end
+	    	end
+	    end
+	end
+
 	private
 	def post_params
 		params.require(:post).permit(:user_id, :title, :category_id, :image, :content, :place, :tips, :course, :tag_list, post_images_images: [])

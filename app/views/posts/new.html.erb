@@ -39,8 +39,8 @@
 				<%= f.text_area :course, autofocus: true, class: "form-control" %>
 				</div>
 				<div class="row post">
-				<%= f.label :tag_list, :'#でタグを入力' %><br >
-				<%= f.text_field :tag_list, class: "form-control"  %>
+				<%= f.label :tag_list, :'タグを入力(例　アメリカ,ニューヨーク)' %><br >
+				<%= f.text_field :tag_list, value: @post.tag_list.join(','), autofocus: true, class: "form-control"  %>
 			</div>
 			<div class="row">
 					<%= f.submit "投稿する", class: "btn btn-info", data: {"turbolinks" => false } %>

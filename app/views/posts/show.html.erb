@@ -54,9 +54,9 @@
 					<div class="row">
 						<div class="col-lg-5">
 							<div>
-								<% @post.tags.each do |tag| %>
+								<% @post.tag_list.each do |tag| %>
 									<span class="tag-badge">
-										<%= link_to "#{tag.name}","#" %>
+										<%= link_to tag, posts_path(tag_name: tag), style: "color:white;", data: {"turbolinks" => false} %>
 									</span>
 								<% end %>
 							</div>

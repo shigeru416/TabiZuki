@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	get "/new", to:"homes#new"
 	get 'chat/:id', to:"chats#show", as: 'chat'
 	devise_for :users
-	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy] do
+	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy, :index] do
 		resource :post_comments, only: [:create, :destroy]
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]

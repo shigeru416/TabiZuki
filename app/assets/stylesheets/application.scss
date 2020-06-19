@@ -51,7 +51,7 @@ footer {
 #back {
   position: fixed;
   right: 20px;
-  bottom: 60px;
+  bottom: 55px;
 }
 
 #back img {
@@ -60,12 +60,12 @@ footer {
 
 /*　ホーム画面　*/
 .ranking_img{
-  width:19vw;
+  width:100%;
   height:14vw;
 }
 
 .new_img{
-  width:19vw;
+  width:100%;
   height:14vw;
 }
 
@@ -214,7 +214,7 @@ footer {
 /* お気に入り・タイムライン画面・ランキング画面・新規投稿一覧画面*/
 .post_timeline_favorite_img{
   height:14vw;
-  width:19vw;
+  width:100%;
 }
 
 .fixed-bg {
@@ -238,8 +238,10 @@ footer {
 
 /* 閲覧履歴 */
 .browsing_history_img{
-	width: 90%;
-	height:8vh;
+	width: 100%;
+	height:auto;
+  min-height:50px;
+  min-width:70px;
 }
 
 .browsing_history_content{
@@ -278,8 +280,8 @@ footer {
 
 /* ユーザーマイページ 旅投稿一覧 */
 .user_postimg{
-	height:13vw;
-  width:17vw;
+	height:14vw;
+  width:100%;
 }
 
 /* 投稿詳細スライドショー・背景 */
@@ -412,4 +414,15 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 3px #ddd;
   white-space: nowrap;
   background-color: #58ACFA;
+}
+
+/* カテゴリー検索後 */
+.bg07 {
+  background-image: url(bg07.jpg);
+  background-position: top;
+  position:relative;
+}
+
+.bg-color07{
+  background-color:#F5F5F5;
 }
