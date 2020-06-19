@@ -1,5 +1,5 @@
 <h1 id="room"><%= user.name %> さんとのチャット</h1>
-<div>
+<div class="message mx-auto" style="width: 100%;">
 	<% chats.each do |chat| %>
 		<% if chat.user_id == current_user.id %>
 			<div class="clearfix">
@@ -7,7 +7,7 @@
 					<%= attachment_image_tag(current_user, :image, :fill, 80, 80,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-left:20px;", size: "80x80") %>
 				</div>
 				<div style="float:right;">
-					<p style="text-align: right; padding-top: 25px;">
+					<p style="text-align: right;">
 						<%= chat.message %>
 					</p>
 				</div>
@@ -18,7 +18,7 @@
 					<%= attachment_image_tag(user, :image, :fill, 80, 80,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-right:20px;", size: "80x80") %>
 				</div>
 				<div style="float:left;">
-					<p style="text-align: left; padding-top: 25px;">
+					<p style="text-align: left;">
 						<%= chat.message %>
 					</p>
 				</div>
