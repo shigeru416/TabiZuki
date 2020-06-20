@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	get "/ranking", to:"homes#ranking"
 	get "/new", to:"homes#new"
 	get 'chat/:id', to:"chats#show", as: 'chat'
+	get "searches/post", to:"searches#post"
 	devise_for :users
 	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy, :index] do
 		resource :post_comments, only: [:create, :destroy]
