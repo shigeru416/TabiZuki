@@ -1,16 +1,35 @@
-<table>
-  <thead>
-    <tr>
-      <th><%= sort_link(@search, :title) -%></th>
-      <th><%= sort_link(@search, :content) -%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title -%></td>
-      <td><%= post.content -%></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <div class="row fixed-bg bg07">
+    <div class="col-12 fixed-bg box">
+        <p class="searches_title"><strong><%= @tag %></strong></p>
+    </div>
+  </div>
+
+
+  <div class="row bg-color07">
+    <div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;">
+      <div class="row">
+        <% if @posts.present? %>
+          <% @posts.each do |post| %>
+            <div class="col-3 text-center post_img" style="margin-top:1vw;">
+                <%= link_to post_path(post), data: {"turbolinks" => false } do %>
+                  <div calss="post_timeline_favorite">
+                    <%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg mybox") %>
+                  </div>
+                <% end %>
+            </div>
+          <% end %>
+        <% else%>
+          <div class="col-12 text-center">
+            <p>検索結果は０件です</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      グーグルマップ
+    </div>
+  </div>
+</div>

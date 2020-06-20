@@ -51,7 +51,7 @@ class PostsController < ApplicationController
 
 	def index
 	    if  params[:tag_name]
-	    	@posts = Post.tagged_with("#{params[:tag_name]}")
+	    	@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc)
 	    	@posts.each do |post|
 	    		post.tags.each do |tag|
 	    			@tag_name = tag.name
