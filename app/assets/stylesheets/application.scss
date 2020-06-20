@@ -34,8 +34,8 @@ main{
 }
 
 footer {
-  padding-top:80px;
-  padding-bottom:0px;
+  padding-top: 80px;
+  padding-bottom: 0px;
 }
 
 /*いいね・行きたいリストボタン*/
@@ -44,7 +44,7 @@ footer {
 }
 
 .favorite{
-	floate:left;
+	floate: left;
 }
 
 /*トップに戻るボタン*/
@@ -60,64 +60,64 @@ footer {
 
 /*　ホーム画面　*/
 .ranking_img{
-  width:100%;
-  height:14vw;
+  width: 100%;
+  height: 14vw;
 }
 
 .new_img{
-  width:100%;
-  height:14vw;
+  width: 100%;
+  height: 14vw;
 }
 
 .slidebox {
-  position   : relative;
-  max-width  : 100%;
-  min-height  :51vw;
-  margin     : auto;
-  overflow   : hidden;
+  position: relative;
+  max-width: 100%;
+  min-height:51vw;
+  margin: auto;
+  overflow: hidden;
 }
 
 /* ホームスライドショー背景の指定 */
 .slidebox .bgImg {
-  position   : absolute;
-  top        : 0;
-  left       : 0;
-  bottom     : 0;
-  right      : 0;
-  opacity    : 0;
-  animation  : bgAnime 30s infinite;   /* 4画像 × 各5s = 20s */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  animation: bgAnime 30s infinite;   /* 5画像 × 各5s = 30s */
 }
 
 /* ホームスライドショー段差で背景画像のアニメーションを実行 */
 .slidebox .src1 {
-  background-image : url(home_image1.jpg);   /* 背景の画像を指定 */
+  background-image: url(home_image1.jpg);   /* 背景の画像を指定 */
   background-size: cover;
   background-position: center;
 }
 .slidebox .src2 {
-  background-image : url(home_image2.jpg);   /* 背景の画像を指定 */
+  background-image: url(home_image2.jpg);   /* 背景の画像を指定 */
   background-size: cover;
   background-position: center;
-  animation-delay  : 6s;
+  animation-delay : 6s;
 }
 .slidebox .src3 {
-  background-image : url(home_image3.jpg);   /* 背景の画像を指定 */
+  background-image: url(home_image3.jpg);   /* 背景の画像を指定 */
   background-size: cover;
   background-position: center;
-  animation-delay  : 12s;
+  animation-delay : 12s;
 }
 .slidebox .src4 {
-  background-image : url(home_image4.jpg);   /* 背景の画像を指定 */
+  background-image: url(home_image4.jpg);   /* 背景の画像を指定 */
   background-size: cover;
   background-position: center;
-  animation-delay  : 18s;
+  animation-delay: 18s;
 }
 
 .slidebox .src5 {
-  background-image : url(home_image5.jpg);   /* 背景の画像を指定 */
+  background-image: url(home_image5.jpg);   /* 背景の画像を指定 */
   background-size: cover;
   background-position: center;
-  animation-delay  : 24s;
+  animation-delay: 24s;
 }
 
 @keyframes bgAnime {
@@ -130,12 +130,12 @@ footer {
 
 /* ホームスライドショー　前面の文字定義 */
 .boxString{
-  position   : absolute;
-  display    : inline-block;
-  top        : 80%;
-  left       : 50%;
-  transform  : translate(-50%,-50%);
-  width:95vw;
+  position: absolute;
+  display: inline-block;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 95vw;
 }
 
 .home_title{
@@ -147,7 +147,7 @@ footer {
 .bg01 {
   background-image: url(bg01.jpg);
   background-position: top;
-  position:relative;
+  position: relative;
 }
 
 .timeline_title{
@@ -157,14 +157,14 @@ footer {
 }
 
 .bg-color01{
-  background-color:#DCDCDC;
+  background-color: #DCDCDC;
 }
 
 /*お気に入り一覧画面*/
 .bg02 {
   background-image: url(bg02.jpg);
   background-position: top;
-  position:relative;
+  position: relative;
 }
 
 .favorites_title{
@@ -174,14 +174,14 @@ footer {
 }
 
 .bg-color02{
-  background-color:#CCFFFF;
+  background-color: #CCFFFF;
 }
 
 /* ランキング一覧画面 */
 .bg03 {
   background-image: url(bg03.jpg);
   background-position: top;
-  position:relative;
+  position: relative;
 }
 
 .ranking_title{
@@ -191,14 +191,14 @@ footer {
 }
 
 .bg-color03{
-  background-color:#FFFFCC;
+  background-color: #FFFFCC;
 }
 
 /* 新規投稿一覧画面 */
 .bg04 {
   background-image: url(bg04.jpg);
   background-position: center;
-  position:relative;
+  position: relative;
 }
 
 .new_title{
@@ -208,18 +208,18 @@ footer {
 }
 
 .bg-color04{
-  background-color:#E6FFE9;
+  background-color: #E6FFE9;
 }
 
 /* お気に入り・タイムライン画面・ランキング画面・新規投稿一覧画面*/
 .post_timeline_favorite_img{
-  height:14vw;
-  width:100%;
+  height: 14vw;
+  width: 100%;
 }
 
 .fixed-bg {
   position:relative;
-  min-height  :51vw;
+  min-height:51vw;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -239,18 +239,18 @@ footer {
 /* 閲覧履歴 */
 .browsing_history_img{
 	width: 100%;
-	height:auto;
-  min-height:50px;
-  min-width:70px;
+	height: auto;
+  min-height: 50px;
+  min-width: 70px;
 }
 
 .browsing_history_content{
   background-color: #fff; /* 背景色 */
   border: 1px solid #ccc; /* 線の太さ・種類・色 */
-  box-shadow:1px 1px 6px 0px #ccc;
-  -moz-box-shadow:1px 1px 6px 0px #ccc;
-  -webkit-box-shadow:1px 1px 6px 0px #ccc;
-  -o-box-shadow:1px 1px 6px 0px #ccc;
+  box-shadow: 1px 1px 6px 0px #ccc;
+  -moz-box-shadow: 1px 1px 6px 0px #ccc;
+  -webkit-box-shadow: 1px 1px 6px 0px #ccc;
+  -o-box-shadow: 1px 1px 6px 0px #ccc;
   margin: 20px 5px; /* 外側の余白 上下・左右 */
   padding: 30px 20px 20px 20px; /* 内側の余白 上・右・下・左 */
   position: relative;
@@ -280,23 +280,23 @@ footer {
 
 /* ユーザーマイページ 旅投稿一覧 */
 .user_postimg{
-	height:14vw;
-  width:100%;
+	height: 14vw;
+  width: 100%;
 }
 
 /* 投稿詳細スライドショー・背景 */
 .posting_img{
-  height:39vw;
+  height: 39vw;
 }
 
 .post_title{
-  float:left;
+  float: left;
 }
 
 .bg06 {
   background-image: url(bg06.jpg);
   background-position: top;
-  position:relative;
+  position: relative;
 }
 
 /* チャット画面(投稿フォーム配置) */
@@ -307,14 +307,14 @@ footer {
 }
 
 .chat_form {
-  margin-top:30px;
-  margin-bottom:50px
+  margin-top: 30px;
+  margin-bottom: 50px
 }
 
 .bg08{
   background-image: url(bg08.jpg);
   background-position: bottom;
-  position:relative;
+  position: relative;
 }
 
 /* チャット吹き出し */
@@ -366,6 +366,7 @@ footer {
     max-width: 500px;
     float: right;
 }
+
 .right_balloon:after,
 .right_balloon:before {
     left: 100%;
@@ -394,7 +395,7 @@ footer {
 .post_img img:hover{
 
   transform: scale(1.1, 1.1);
-  transition:0.5s;
+  transition: 0.5s;
 }
 
 /* ホーム画面カテゴリーボタン */
@@ -402,7 +403,7 @@ footer {
   position: relative;
   display: block;
   width: 95%;
-  hight:1vw !important;
+  hight: 1vw !important;
   padding: 3px;
   text-align: center;
   color: #fff;
@@ -424,18 +425,18 @@ footer {
 }
 
 .cp_btn:hover:before {
-  left:0;
+  left: 0;
   width: 100%;
 }
 
 .name_button{
-  font-size:1.5vw;
+  font-size: 1.5vw;
 }
 
 /* ユーザー情報枠 */
 .user_info_detail{
-padding: 1em;
-margin: 2em auto;
+padding: 16px;
+margin: 32px auto;
 color: #60688c;
 width:100%;
 background: #fff;
@@ -445,8 +446,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 .wannago_detail {
     background-color: #fff;
-    margin: 2em 0;
-    padding: 2em;
+    margin: 32px 0;
+    padding: 32px;
     position: relative;
     z-index: 1;
 }
@@ -475,7 +476,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 .bg05 {
   background-image: url(bg05.jpg);
   background-position: center;
-  position:relative;
+  position: relative;
 }
 
 /* 投稿旅の外枠 */
@@ -488,7 +489,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 /* 各タイトル */
 .title{
-  font-size:3vw;
+  font-size: 3vw;
   font-family: 'Kaushan Script', cursive;
 }
 
@@ -517,7 +518,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 .bg-color07{
-  background-color:#F5F5F5;
+  background-color: #F5F5F5;
 }
 
 /*　検索　*/
