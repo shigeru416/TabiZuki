@@ -4,88 +4,11 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="user_infomation_title">
-            <div class="user_info_detail rounded-lg" style="margin-bottom: 20px;">
-              <p class="text-center" style="margin-top:20px;">
-                <%= @user.name %>
-                <% if @user == current_user %>
-                  <%= link_to "", edit_user_path(@user), class: "fas fa-user-edit", data: {"turbolinks" => false} %>
-                <% end %>
-              </p>
-              <div class="row">
-                <div class="col-12 text-center" style="margin-bottom:20px;">
-                  <%= attachment_image_tag(@user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg", size: "150x150") %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-8 offset-2" style="margin-bottom: 20px;">
-                  <%= @user.introduction %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <p>投稿<br><%= link_to "#{@user.posts.count}", user_path(@user) %></p>
-                    </div>
-                    <div class="col-4 text-center">
-                      <p>フォロー<br><%= link_to @user.follower.count, user_follows_path(@user) %></p>
-                    </div>
-                    <div class="col-4 text-center">
-                      <p>フォロワー<br><%= link_to @user.followed.count, user_followers_path(@user) %></p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="row" style="margin-bottom: 10px;">
-                <div class="col-10 offset-1">
-                  <div class="row">
-                    <div class="col-12 text-center">
-                      <% if current_user != @user %>
-                        <% if current_user.following?(@user) %>
-                          <%= link_to 'フォロー外す', user_relationships_path(@user.id), method: :delete, class: "btn btn-info", style: "margin-top:10px;" %>
-                        <% else %>
-                          <%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "btn btn-info", style: "margin-top: 10px;" %>
-                        <% end %>
-
-                        <%= link_to "チャットする", chat_path(@user), class: "btn btn-info", style: "margin-top:10px;" %>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="user_info_detail" style="margin-bottom: 20px;">
+              <%= render "users/sidebar_user", user: @user %>
             </div>
             <div class="wannago_detail">
-              <div class="row">
-                <div class="col-12 text-center">
-                  <p class="wannago_detail_title" style="margin-bottom:30px;">
-                    行きたい旅リスト
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="row">
-                    <% if @user.wannago_lists.count > 0 %>
-                      <% @user.wannago_lists.each do |wannago_list|%>
-                        <div class="col-4 text-right" style="margin-top:1vh;">
-                          <%= link_to post_path(wannago_list.post), data: {"turbolinks" => false } do %>
-                            <%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>
-                          <% end %>
-                        </div>
-                        <div class="col-8 text-left" style="margin-top:1vh;">
-                          <%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
-                          <p><%= wannago_list.post.content.truncate(9) %></p>
-                        </div>
-                      <% end %>
-                    <% else %>
-                      <div class="col-12 text-center">
-                        <p>行きたい旅を見つけよう</p>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
+              <%= render "users/sidebar_wannago" , user: @user %>
             </div>
           </div>
         </div>
@@ -95,33 +18,7 @@
               <p style="margin-top:32px;">フォロワー一覧</p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-10 offset-1">
-              <% @users.each do |user| %>
-                <div class="row">
-                  <div class="col-5 text-right" style="margin-top:10px;">
-                    <%= link_to user_path(user), data: {"turbolinks" => false} do %>
-                      <%= attachment_image_tag(user, :image, :fill, 80, 80, class: "rounded-circle", fallback: "no_image.jpg", size: "80x80") %>
-                    <% end %>
-                  </div>
-                  <div class="col-7" style="margin-top:10px;">
-                    <div class="row">
-                      <div class="col-12">
-                        <%= link_to "#{user.name}", user_path(user) %>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <% if user.introduction.present? %>
-                        <%= user.introduction.truncate(32) %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
+          <%= render "users/user_followed_follower_index", users: @users %>
         </div>
       </div>
     </div>

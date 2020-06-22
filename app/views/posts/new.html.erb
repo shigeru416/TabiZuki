@@ -7,45 +7,44 @@
 </div>
 
 <%= form_for(@post) do |f| %>
-<div class="container-fluid">
- 	<div class="row">
- 		<div class="col-8 offset-2">
-			<div class="row post">
-	 			<%= f.label :title, :タイトル %><br >
-				<%= f.text_field :title, autofocus: true, class: "form-control" %>
-			</div>
-			<div class="row post">
-				<%= f.attachment_field :post_images_images, multiple: true, class: "posts" %>
-				<div id="result"></div>
-			</div>
-			<div class="row post">
-				<%= f.label :place, :場所名 %><br >
-				<%= f.text_field :place, autofocus: true, class: "form-control" %>
-			</div>
-			<div class="row post">
-				<%= f.label :category_id, :カテゴリー %>
-				<%= f.collection_select :category_id, @categories, :id, :name, include_blank: "選択してください" %>
-			</div>
-			<div class="row post">
-				<%= f.label :content, :旅の紹介 %><br >
-				<%= f.text_area :content, autofocus: true, class: "form-control" %>
-			</div>
+	<div class="container-fluid">
+	 	<div class="row">
+	 		<div class="col-8 offset-2">
+				<div class="row post">
+		 			<%= f.label :title, :タイトル %><br >
+					<%= f.text_field :title, autofocus: true, class: "form-control" %>
+				</div>
+				<div class="row post">
+					<%= f.attachment_field :post_images_images, multiple: true %>
+				</div>
+				<div class="row post">
+					<%= f.label :place, :場所名 %><br >
+					<%= f.text_field :place, autofocus: true, class: "form-control" %>
+				</div>
+				<div class="row post">
+					<%= f.label :category_id, :カテゴリー %>
+					<%= f.collection_select :category_id, @categories, :id, :name, include_blank: "選択してください" %>
+				</div>
+				<div class="row post">
+					<%= f.label :content, :旅の紹介 %><br >
+					<%= f.text_area :content, autofocus: true, class: "form-control" %>
+				</div>
 				<div class="row post">
 					<%= f.label :tips, :Tips（お得情報や注意した方がよいことなど） %><br >
-				<%= f.text_area :tips, autofocus: true, class: "form-control"  %>
+					<%= f.text_area :tips, autofocus: true, class: "form-control"  %>
 				</div>
 				<div class="row post">
 					<%= f.label :course, :おすすめコース %><br >
-				<%= f.text_area :course, autofocus: true, class: "form-control" %>
+					<%= f.text_area :course, autofocus: true, class: "form-control" %>
 				</div>
 				<div class="row post">
-				<%= f.label :tag_list, :'タグを入力(例　アメリカ,ニューヨーク)' %><br >
-				<%= f.text_field :tag_list, value: @post.tag_list.join(','), autofocus: true, class: "form-control"  %>
-			</div>
-			<div class="row">
-					<%= f.submit "投稿する", class: "btn btn-info", data: {"turbolinks" => false } %>
-			</div>
+					<%= f.label :tag_list, :'タグを入力(例　アメリカ,ニューヨーク)' %><br >
+					<%= f.text_field :tag_list, value: @post.tag_list.join(','), autofocus: true, class: "form-control"  %>
+				</div>
+				<div class="row">
+						<%= f.submit "投稿する", class: "btn btn-info", data: {"turbolinks" => false } %>
+				</div>
+		 	</div>
 	 	</div>
- 	</div>
-</div>
+	</div>
 <% end %>

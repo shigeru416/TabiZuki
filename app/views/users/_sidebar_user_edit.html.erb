@@ -1,0 +1,39 @@
+<%= form_for user do |f| %>
+	<div class="row">
+		<div class="col-12 text-center" style="margin-top:20px;">
+			<%= f.text_field :name, autofocus: true, placeholder: "ニックネーム" %>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 10px; margin-top: 10px;">
+		<div class="col-12 text-center">
+			<%= attachment_image_tag(user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg", size: "150x150") %><br>
+			<%= f.attachment_field :image %>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 10px;">
+		<div class="col-12 text-center">
+			<%= f.text_area :introduction, autofocus: true, placeholder: "紹介文"%><br >
+			<%= f.submit "更新する", class: "btn btn-info" %>
+		</div>
+	</div>
+<% end %>
+<div class="row" style="margin-bottom: 30px;">
+	<div class="col-12 text-center">
+		パスワード・メールアドレス・退会は<%= link_to "こちら", edit_user_registration_path, data: {"turbolinks" => false} %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<div class="row">
+			<div class="col-4 text-center">
+				<p>投稿<br><%= link_to "#{user.posts.count}", user_path(user) %></p>
+			</div>
+			<div class="col-4 text-center">
+				<p>フォロー<br><%= link_to user.follower.count, user_follows_path(user) %></p>
+			</div>
+			<div class="col-4 text-center">
+				<p>フォロワー<br><%= link_to user.followed.count, user_followers_path(user) %></p>
+			</div>
+		</div>
+	</div>
+</div>

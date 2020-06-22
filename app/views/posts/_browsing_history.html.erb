@@ -1,0 +1,19 @@
+<div class="browsing_history_content">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<div class="row post_img">
+				<% current_user.browsing_histories.order(created_at: :desc).each do |browsing_history| %>
+						<div class="col-5" style="margin-top:20px;">
+							<%= link_to post_path(browsing_history.post), data: {"turbolinks" => false} do%>
+								<%= attachment_image_tag(browsing_history.post.post_images.first, :image ,fallback: "no_image.jpg", class: "browsing_history_img rounded-lg") %>
+							<% end %>
+						</div>
+						<div class="col-7" style="margin-top:20px;">
+							<%= link_to "#{browsing_history.post.title}", post_path(browsing_history.post), style:"word-break: break-word;",  data: {"turbolinks" => false } %>
+							<p><%= browsing_history.post.content.truncate(28) %></p>
+						</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

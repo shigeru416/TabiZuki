@@ -85,22 +85,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3" style="margin-top:3vw; margin-bottom:3vw;">
-					<div class="row">
-							<div class="col-12 text-center title">
-								<strong>Category</strong>
-							</div>
-					</div>
-					<div class="row">
-						<% @categories.each do |category| %>
-							<div class="col-6 text-center" style="margin-top:20px;">
-								<%= link_to category_path(category), data: {"turbolinks" => false}, class: "btn cp_btn" do %>
-								 <p class="name_button" style="margin-top:15px;"><%= category.name %></p>
-								<% end %>
-							</div>
-						<% end %>
-					</div>
-				</div>
+				<%= render "homes/category_homes", categories: @categories %>
 			</div>
 		</div>
 	</div>
