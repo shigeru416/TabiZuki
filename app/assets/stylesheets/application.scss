@@ -66,6 +66,7 @@ footer {
 
 .new_img{
   width: 100%;
+  min-height:50px;
   height: 14vw;
 }
 
@@ -299,6 +300,11 @@ footer {
   position: relative;
 }
 
+#map { 
+  height: 20vw;
+  width:100%;
+     }
+
 /* チャット画面(投稿フォーム配置) */
 #wrapper1 {
   display: flex;
@@ -526,4 +532,27 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   font-size: 8vw;
   color: black;
   font-family: 'Kaushan Script', cursive;
+}
+
+
+.bgcolor08{
+  background-color: #DCDCDC;
+}
+
+.new-btn{
+  display:inline-block;
+  width: 250px;
+  height:70px;
+  line-height: 70px;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f39800; /*ボタン色*/
+  border-radius: 5px; /*角丸*/
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.new-btn:hover{
+     background-color: #f9c500; /*ボタン色*/
+     color:white;
 }

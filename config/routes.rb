@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 	root "homes#home"
 	get "/about", to:"homes#about"
+	get "/tabizukimembership", to:"homes#tabizukimembership"
 	get "/timeline", to:"homes#timeline"
 	get "/favorites", to:"homes#favorites"
 	get "/ranking", to:"homes#ranking"

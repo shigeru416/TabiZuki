@@ -2,9 +2,17 @@ class HomesController < ApplicationController
 	def about
 	end
 
+	def tabizukimembership
+	end
+
 	def home
 		@categories = Category.all
 		@posts = Post.all
+		@places_array = []
+		@posts.each do |post|
+			@places_array << post.place
+		end
+		@places = @place_array
 	end
 
 	def timeline
