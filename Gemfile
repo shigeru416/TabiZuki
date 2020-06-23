@@ -69,6 +69,7 @@ gem 'bxslider-rails'
 gem 'acts-as-taggable-on'
 gem 'rails-i18n'
 gem 'ransack'
+gem 'kaminari'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

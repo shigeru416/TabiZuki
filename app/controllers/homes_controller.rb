@@ -36,10 +36,10 @@ class HomesController < ApplicationController
 	end
 
 	def ranking
-		@posts = Post.all
+		@posts = Post.all.order(favorite_count: :desc).page(params[:page])
 	end
 
 	def new
-		@posts = Post.all
+		@posts = Post.all.order(created_at: :desc).page(params[:page])
 	end
 end

@@ -8,7 +8,7 @@
 	<div class="row bg-color03">
 		<div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;">
 			<div class="row">
-				<% @posts.order(favorite_count: :desc).each do |post| %>
+				<% @posts.each do |post| %>
 						<div class="col-3">
 							<div class="row post_img">
 								<div class="col-12 text-center" style="margin-top:1vw;" >
@@ -25,6 +25,7 @@
 						</div>
 				<% end %>
 			</div>
+			<%= render "homes/paginate", posts: @posts %>
 		</div>
 	</div>
 </div>

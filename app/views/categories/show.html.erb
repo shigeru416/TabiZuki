@@ -22,7 +22,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
-										<% @category.posts.order(favorite_count: :desc).each do |post| %>
+										<% @posts.each do |post| %>
 												<div class="col-4">
 													<div class="row post_img" style="margin-top:1vw;">
 														<div class="col-12 text-center">
@@ -39,6 +39,7 @@
 												</div>
 										<% end %>
 									</div>
+									<%= render "homes/paginate", posts: @posts %>
 								</div>
 							</div>
 						</div>

@@ -13,7 +13,10 @@
 						</div>
 					</div>
 				</div>
-				<%= render "users/user_post_index", user: @user %>
+				<div class="col-lg-9" style="margin-bottom:32px;">
+					<%= render "users/user_post_index", user: @user, posts: @posts %>
+					<%= render "homes/paginate", posts: @posts %>
+				</div>
 			</div>
 		</div>
 	</div>

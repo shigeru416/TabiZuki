@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
 	def post
-		@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc)
+		@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page])
 		@tag = params[:tag_name]
   	end
 
