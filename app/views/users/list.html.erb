@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row fixed-bg bg05">
+		<div class="col-10 offset-1">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="user_infomation_title">
+						<div class="user_info_detail" style="margin-bottom: 20px;">
+							<%= render "users/sidebar_user", user: @user %>
+							<%= render "users/sidebar_user_follow_chat", user: @user %>
+						</div>
+						<div class="wannago_detail">
+							<%= render "users/sidebar_wannago" , user: @user %>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9" style="margin-bottom:32px;">
+					<%= render "users/wannago_lists", user: @user, posts: @posts %>
+					<%= render "homes/paginate", posts: @posts %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

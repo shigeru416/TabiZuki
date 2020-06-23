@@ -1,7 +1,11 @@
 <div class="row">
 	<div class="col-12 text-center">
 		<p class="wannago_detail_title" style="margin-bottom:30px;">
-			行きたい旅リスト
+			<% if user == current_user %>
+				<%= link_to "行きたい旅リスト", list_user_path(user), data:{"turbolinks" => false } %>
+			<% else %>
+				行きたい旅リスト
+			<% end %>
 		</p>
 	</div>
 </div>
@@ -9,7 +13,7 @@
 	<div class="col-12">
 		<div class="row">
 			<% if user.wannago_lists.count > 0 %>
-				<% user.wannago_lists.each do |wannago_list|%>
+				<% user.wannago_lists.order(created_at: :desc).first(8).each do |wannago_list|%>
 					<div class="col-4 text-right" style="margin-top:1vh;">
 						<%= link_to post_path(wannago_list.post), data: {"turbolinks" => false } do %>
 							<%= attachment_image_tag(wannago_list.post.post_images.first, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "rounded-circle") %>

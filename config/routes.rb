@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 	get "/new", to:"homes#new"
 	get 'chat/:id', to:"chats#show", as: 'chat'
 	get "searches/post", to:"searches#post"
+	get "searches/tag", to:"searches#tag"
 	devise_for :users
-	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy, :index] do
+	resources :posts, only:[:new, :create, :show, :edit, :update, :destroy] do
 		resource :post_comments, only: [:create, :destroy]
 		resource :favorites, only: [:create, :destroy]
 		resource :wannago_lists, only: [:create, :destroy]
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
 		resource :relationships, only: [:create, :destroy]
 	    get 'follows' => 'relationships#follower', as: 'follows'
 	    get 'followers' => 'relationships#followed', as: 'followers'
+	    member do
+	    	get :list
+	    end
 	end
 	resources :chats, only: [:create]
 	resources :categories, only: [:show]

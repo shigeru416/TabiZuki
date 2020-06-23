@@ -23,7 +23,7 @@
       </ul>
       <%= form_with model: @tags, url: searches_post_path, method: :get, local: true, data: {"turbolinks" => false } do |f| %>
         <div class="form-inline my-2 my-lg-0">
-          <%= f.search_field :tag_name, class: "form-control mr-sm-2" %>
+          <%= f.search_field :tag_name, class: "form-control mr-sm-2",placeholder: "キーワード"  %>
           <%= f.submit '検索', class: "btn btn-outline-info my-2 my-sm-0"%>
         </div>
       <% end %>

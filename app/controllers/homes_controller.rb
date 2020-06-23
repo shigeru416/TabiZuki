@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+
+	before_action :authenticate_user!, except: [:about, :tabizukimembership, :home, :ranking, :new]
 	def about
 	end
 
@@ -28,11 +30,13 @@ class HomesController < ApplicationController
 			end
 		end
 		@user_posts = @user_posts.sort_by{|posts| posts.created_at}.reverse
+		@posts = Kaminari.paginate_array(@user_posts).page(params[:page])
 
 	end
 
 	def favorites
 		@user_favorites = current_user.favorites.order(created_at: :desc)
+		@posts = @user_favorites.page(params[:page])
 	end
 
 	def ranking

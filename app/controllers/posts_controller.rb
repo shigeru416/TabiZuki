@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+	before_action :authenticate_user!, except: [:show]
+
 	def new
 		@post = Post.new
 		@categories = Category.all
@@ -22,19 +25,23 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post_comment = PostComment.new
 		
-		new_history = @post.browsing_histories.new
-    	new_history.user_id = current_user.id
-    	if current_user.browsing_histories.exists?(post_id: "#{params[:id]}")
-			old_history = current_user.browsing_histories.find_by(post_id: "#{params[:id]}")
-			old_history.destroy
-	    end
-	    new_history.save
+		if user_signed_in?
+			new_history = @post.browsing_histories.new
+	    	new_history.user_id = current_user.id
+	    	if current_user.browsing_histories.exists?(post_id: "#{params[:id]}")
+				old_history = current_user.browsing_histories.find_by(post_id: "#{params[:id]}")
+				old_history.destroy
+		    end
+		    new_history.save
 
-	    histories_stock_limit = 10
-	    histories = current_user.browsing_histories.all
-	    if histories.count > histories_stock_limit
-	      histories[0].destroy
-	    end
+		    histories_stock_limit = 10
+		    histories = current_user.browsing_histories.all
+		    if histories.count > histories_stock_limit
+		      	histories[0].destroy
+	    	end
+
+			@posts = current_user.browsing_histories.order(created_at: :desc)
+		end
 	end
 
 	def edit
@@ -57,20 +64,6 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.destroy
 		redirect_to user_path(current_user)
-	end
-
-	def index
-	    if  params[:tag_name]
-	    	@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc)
-	    	@posts.each do |post|
-	    		post.tags.each do |tag|
-	    			@tag_name = tag.name
-	    			if params[:tag_name] == @tag_name
-	    				@tag = @tag_name
-	    			end
-	    		end
-	    	end
-	    end
 	end
 
 	private

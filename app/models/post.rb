@@ -20,14 +20,13 @@ class Post < ApplicationRecord
 	validates :content, presence: true
 	validates :tips, presence: true
 	validates :course, presence: true
-	
 
 	def favorited_by?(user)
     	favorites.where(user_id: user.id).exists?
   	end
 
   	def wannago_listed_by?(user)
-    	wannago_lists.where(user_id: user.id).exists?
+    		wannago_lists.where(user_id: user.id).exists?
   	end
 
 end
