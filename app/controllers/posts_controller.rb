@@ -8,8 +8,14 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		@post.user_id = current_user.id
-		@post.save
-		redirect_to post_path(@post)
+		if @post.save
+			redirect_to post_path(@post)
+		else
+			@categories = Category.all
+			@post.post_images.build
+			render :new
+		end
+
 	end
 
 	def show
@@ -38,9 +44,13 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		@post.update(post_params)
-		@post_comment = PostComment.new
-		render :show
+		if @post.update(post_params)
+			@post_comment = PostComment.new
+			render :show
+		else
+			@categories = Category.all
+			render :edit
+		end
 	end
 
 	def destroy

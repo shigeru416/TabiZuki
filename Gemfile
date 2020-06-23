@@ -67,6 +67,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'bxslider-rails'
 gem 'acts-as-taggable-on'
+gem 'rails-i18n'
 gem 'ransack'
 gem 'dotenv-rails'
 group :production do

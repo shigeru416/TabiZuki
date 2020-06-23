@@ -559,3 +559,11 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
      background-color: #17a2b8; /*ボタン色*/
      color:white;
 }
+
+/* バリデーション */
+.field_with_errors {
+  display: contents;
+  input, textarea {
+    @extend .is-invalid;
+  }
+}

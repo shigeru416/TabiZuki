@@ -13,6 +13,15 @@ class Post < ApplicationRecord
 	has_many :post_comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 
+	validates :title, presence: true, length:{maximum: 20}
+	validates :post_images_images, presence: true
+	validates :place, presence: true
+	validates :category_id, presence: true
+	validates :content, presence: true
+	validates :tips, presence: true
+	validates :course, presence: true
+	
+
 	def favorited_by?(user)
     	favorites.where(user_id: user.id).exists?
   	end

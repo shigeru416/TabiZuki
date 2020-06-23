@@ -1,4 +1,13 @@
 <%= form_for user do |f| %>
+	<% if user.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% user.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 	<div class="row">
 		<div class="col-12 text-center" style="margin-top:20px;">
 			<%= f.text_field :name, autofocus: true, placeholder: "ニックネーム" %>
