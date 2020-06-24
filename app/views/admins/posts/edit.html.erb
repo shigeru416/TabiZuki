@@ -1,22 +1,17 @@
-<div class="container-fluid">
- 	<div class="row">
- 		<div class="col-8 offset-2">
- 			<h1 class="text-center">旅を見直す</h1>
- 		</div>
- 	</div>
+<div class="text-center">
+	<p style="font-size: 4vw;">旅の編集</p>
 </div>
+<%= form_for @post, url: admins_post_path(@post) do |f| %>
 
-<%= form_for(@post) do |f| %>
-
-<% if @post.errors.any? %>
-	<div id="error_explanation">
-		<ul>
-			<% @post.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-			<% end %>
-		</ul>
-	</div>
-<% end %>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @post.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
 	<div class="container-fluid">
 	 	<div class="row">

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-8 offset-2 text-center">
+			<div>
+				<p style="font-size: 4vw;">会員情報編集</p>
+			</div>
+			<%= form_for @user, url: admins_user_path(@user) do |f| %>
+
+				<% if @user.errors.any? %>
+					<div id="error_explanation">
+						<ul>
+							<% @user.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+							<% end %>
+						</ul>
+					</div>
+				<% end %>
+				<div>
+					<%= f.label :name, :ユーザー名 %><br>
+					<%= f.text_field :name, autofocus: true %>
+				</div>
+				<div>
+					<%= attachment_image_tag(@user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg", size: "150x150") %>
+				</div>
+				<div>
+					<%= f.label :image, :プロフィール %><br>
+					<%= f.attachment_field :image %>
+				</div>
+				<div>
+					<%= f.label :email, :メールアドレス %><br>
+					<%= f.email_field :email, autofocus: true %>
+				</div>
+				<div>
+					<%= f.label :introduction, :紹介文 %><br>
+					<%= f.text_area :introduction, autofocus: true, placeholder: "紹介文"%>
+				</div>
+				<%= f.submit "更新する", class: "btn btn-info" %>
+			<% end %>
+		</div>
+	</div>
+</div>

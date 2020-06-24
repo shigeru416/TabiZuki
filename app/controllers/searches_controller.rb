@@ -5,17 +5,15 @@ class SearchesController < ApplicationController
   	end
 
   	def tag
-	    if  params[:tag_name]
-	    	@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page])
-	    	@posts.each do |post|
-	    		post.tags.each do |tag|
-	    			@tag_name = tag.name
-	    			if params[:tag_name] == @tag_name
-	    				@tag = @tag_name
-	    			end
-	    		end
-	    	end
-	    end
+    	@posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page])
+    	@posts.each do |post|
+    		post.tags.each do |tag|
+    			@tag_name = tag.name
+    			if params[:tag_name] == @tag_name
+    				@tag = @tag_name
+    			end
+    		end
+    	end
 	end
 
 	private

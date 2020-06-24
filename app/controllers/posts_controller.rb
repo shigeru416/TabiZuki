@@ -47,23 +47,40 @@ class PostsController < ApplicationController
 	def edit
 		@post = Post.find(params[:id])
 		@categories = Category.all
+		if current_user != @post.user
+			redirect_to root_path
+		end
 	end
 
 	def update
 		@post = Post.find(params[:id])
-		if @post.update(post_params)
-			@post_comment = PostComment.new
-			render :show
+		if current_user == @post.user
+			if @post.update(post_params)
+				@post_comment = PostComment.new
+				@posts = current_user.browsing_histories.order(created_at: :desc)
+				render :show
+			else
+				@categories = Category.all
+				render :edit
+			end
 		else
-			@categories = Category.all
-			render :edit
+			redirect_to root_path
 		end
 	end
 
 	def destroy
 		@post = Post.find(params[:id])
-		@post.destroy
-		redirect_to user_path(current_user)
+		if current_user == @post.user
+			if @post.destroy
+				redirect_to user_path(current_user)
+			else
+				@posts = current_user.browsing_histories.order(created_at: :desc)
+				@post_comment = PostComment.new
+				render :show
+			end
+		else
+			redirect_to root_path
+		end
 	end
 
 	private

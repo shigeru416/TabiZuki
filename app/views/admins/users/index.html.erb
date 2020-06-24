@@ -1,0 +1,53 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-8 offset-2">
+			<div class="row">
+				<div class="col-12 text-right">
+				<%= search_form_for @q, url:admins_users_path do |f| %>
+				    <%= f.search_field :name_cont, autofocus: true, placeholder: "user name" %>
+				    <%= f.submit "検索", class: "btn btn-info" %>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-8 offset-2 text-center">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<%= sort_link(@q, :会員番号) -%>
+						</th>
+						<th>
+							<%= sort_link(@q, :ユーザー名) -%>
+						</th>
+						<th>
+							<%= sort_link(@q, :紹介文) -%>
+						</th>
+						<th>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users_search.each do |user| %>
+						<tr>
+							<td>
+								<%= user.id -%>
+							</td>
+							<td>
+								<%= user.name -%>
+							</td>
+							<td>
+								<%= user.introduction -%>
+							</td>
+							<td>
+								<%= link_to "詳細", admins_user_path(user), class: "btn btn-info" %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

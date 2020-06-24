@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 	devise_for :admins
 	namespace :admins do
 		root "homes#home"
+		get "searches/tag", to:"searches#tag"
 		resources :categories, only:[:index, :create, :destroy]
+		resources :users, only:[:index, :show, :edit, :update, :destroy]
+		resources :posts, only:[:index, :show, :edit, :update, :destroy] do
+			resource :post_comments, only: [:destroy]
+		end
 	end
 end
