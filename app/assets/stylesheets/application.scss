@@ -99,31 +99,31 @@ footer {
 }
 
 .slidebox .src1 {
-  background-image: image-url(home_image1.jpg);
+  background-image: image-url("home_image1.jpg");
   background-size: cover;
   background-position: center;
 }
 .slidebox .src2 {
-  background-image: image-url(home_image2.jpg);
+  background-image: image-url("home_image2.jpg");
   background-size: cover;
   background-position: center;
   animation-delay : 6s;
 }
 .slidebox .src3 {
-  background-image: image-url(home_image3.jpg);
+  background-image: image-url("home_image3.jpg");
   background-size: cover;
   background-position: center;
   animation-delay : 12s;
 }
 .slidebox .src4 {
-  background-image: image-url(home_image4.jpg);
+  background-image: image-url("home_image4.jpg");
   background-size: cover;
   background-position: center;
   animation-delay: 18s;
 }
 
 .slidebox .src5 {
-  background-image: image-url(home_image5.jpg);
+  background-image: image-url("home_image5.jpg");
   background-size: cover;
   background-position: center;
   animation-delay: 24s;
@@ -158,7 +158,7 @@ footer {
 
 /* タイムライン画面 */
 .bg01 {
-  background-image: image-url(bg01.jpg);
+  background-image: image-url("bg01.jpg");
   background-position: top;
   position: relative;
 }
@@ -177,7 +177,7 @@ footer {
 
 /*お気に入り一覧画面*/
 .bg02 {
-  background-image: image-url(bg02.jpg);
+  background-image: image-url("bg02.jpg");
   background-position: top;
   position: relative;
 }
@@ -196,7 +196,7 @@ footer {
 
 /* ランキング一覧画面 */
 .bg03 {
-  background-image: image-url(bg03.jpg);
+  background-image: image-url("bg03.jpg");
   background-position: top;
   position: relative;
 }
@@ -215,7 +215,7 @@ footer {
 
 /* 新規投稿一覧画面 */
 .bg04 {
-  background-image: image-url(bg04.jpg);
+  background-image: image-url("bg04.jpg");
   background-position: center;
   position: relative;
 }
@@ -321,7 +321,7 @@ footer {
 }
 
 .bg06 {
-  background-image: image-url(bg06.jpg);
+  background-image: image-url("bg06.jpg");
   background-position: top;
   position: relative;
 }
@@ -349,7 +349,7 @@ footer {
 }
 
 .bg08{
-  background-image: image-url(bg08.jpg);
+  background-image: image-url("bg08.jpg");
   background-position: bottom;
   position: relative;
 }
@@ -522,7 +522,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 /* ユーザー画面（背景）*/
 .bg05 {
-  background-image: image-url(bg05.jpg);
+  background-image: image-url("bg05.jpg");
   background-position: center;
   position: relative;
 }
@@ -568,7 +568,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 /* カテゴリー検索後の画面 */
 .bg07 {
-  background-image: image-url(bg07.jpg);
+  background-image: image-url("bg07.jpg");
   background-position: top;
   position:relative;
 }
