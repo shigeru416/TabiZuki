@@ -10,10 +10,10 @@
 		<div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;">
 			<div class="row">
 				<% @posts.each do |post| %>
-					<div class="col-3 text-center post_img" style="margin-top:1vw;">
+					<div class="col-sm-3 col-12 text-center post_img" style="margin-top:1vw;">
 						<%= link_to post_path(post), data: {"turbolinks" => false } do %>
 							<div calss="post_timeline_favorite">
-								<%= attachment_image_tag(post.post_images.first, :image, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg mybox") %>
+								<%= attachment_image_tag(post.post_images.first, :image, :fill, 500, 450, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg mybox") %>
 							</div>
 						<% end %>
 					</div>

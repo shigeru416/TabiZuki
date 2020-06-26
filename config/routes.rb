@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 	namespace :admins do
 		root "homes#home"
 		get "searches/tag", to:"searches#tag"
+		get "homes/today", to:"homes#today"
 		resources :categories, only:[:index, :create, :destroy]
 		resources :users, only:[:index, :show, :edit, :update, :destroy]
 		resources :posts, only:[:index, :show, :edit, :update, :destroy] do

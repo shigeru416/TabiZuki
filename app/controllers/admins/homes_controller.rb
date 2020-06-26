@@ -3,4 +3,7 @@ class Admins::HomesController < ApplicationController
 	def home
 		@posts = Post.all
 	end
+	def today
+		@posts = Post.all
+	end
 end

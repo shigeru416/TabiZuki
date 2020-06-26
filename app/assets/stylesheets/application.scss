@@ -68,13 +68,14 @@ footer {
 /*　ホーム画面(ランキング・新規投稿画像)　*/
 .ranking_img{
   width: 100%;
-  height: 14vw;
+  height:auto;
+  max-height:23vh;
 }
 
 .new_img{
   width: 100%;
-  min-height:50px;
-  height: 14vw;
+  height:auto;
+  max-height:23vh;
 }
 /*　ホーム画面(ランキング・新規投稿画像)　*/
 
@@ -234,8 +235,9 @@ footer {
 
 /* お気に入り・タイムライン画面・ランキング画面・新規投稿一覧画面*/
 .post_timeline_favorite_img{
-  height: 14vw;
   width: 100%;
+  height:auto;
+  max-height:23vh;
 }
 
 .fixed-bg {
@@ -305,8 +307,9 @@ footer {
 
 /* ユーザーマイページ 旅投稿一覧 */
 .user_postimg{
-	height: 14vw;
-  width: 100%;
+	width: 100%;
+  height:auto;
+  max-height:23vh;
 }
 /* ユーザーマイページ 旅投稿一覧 */
 
@@ -434,8 +437,9 @@ footer {
 
 /* 投稿画像ホバー */
 .post_img img:hover{
-
-  transform: scale(1.1, 1.1);
+  -webkit-backface-visibility: hidden; /* 1px右にずれる現象防止 */
+  backface-visibility: hidden; /* 1px右にずれる現象防止 */
+  transform: scale(1.05, 1.05);
   transition: 0.5s;
 }
 /* 投稿画像ホバー */
@@ -473,7 +477,7 @@ footer {
 }
 
 .name_button{
-  font-size: 1.5vw;
+  font-size: 15px;
 }
 /* ホーム画面（カテゴリーボタン）*/
 
@@ -534,14 +538,14 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow:1px 1px 5px 0px #ccc;
-  padding: 0.4vw;
+  padding: 4px;
 }
 /* 投稿旅の外枠 */
 
 
 /* その他タイトル・背景 */
 .title{
-  font-size: 3vw;
+  font-size: 5vw;
   font-family: 'Kaushan Script', cursive;
 }
 
