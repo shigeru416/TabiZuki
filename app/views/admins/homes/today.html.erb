@@ -6,9 +6,9 @@
 	</div>
 	<div class="row">
 		<div class="col-10 offset-1">
-			<% if @posts.map{|a| a.created_at.in_time_zone('Japan').strftime("%Y/%m/%d")}.include?(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) == true %>
+			<% if @posts.map{|a| a.created_at.in_time_zone('Japan').strftime("%Y/%m/%d")}.include?(Time.current.in_time_zone('Japan').strftime("%Y/%m/%d")) == true %>
 				<% @posts.each do |post| %>
-					<% if post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d").match(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) %>
+					<% if post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d").match(Time.current.in_time_zone('Japan').strftime("%Y/%m/%d")) %>
 						<div class="row" style="margin-bottom:2vw;">
 							<div class="col-5 text-right">
 								<%= link_to admins_post_path(post), data: {"turbolinks" => false } do %>

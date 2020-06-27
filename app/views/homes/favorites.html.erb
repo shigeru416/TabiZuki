@@ -25,7 +25,7 @@
 											<p style="font-size:13px;"><%= l(favorite.post.created_at, format: :year) %></p>
 											<p style="font-size:17px; margin-top: -15px; margin-bottom: -10px;"><strong><%= l(favorite.post.created_at, format: :short) %></strong>
 											</p>
-											<% if favorite.post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d").include?(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) == true %>
+											<% if favorite.post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d") == Time.current.in_time_zone('Japan').strftime("%Y/%m/%d")%>
 												<div style="color:red; font-size:14px; margin-top:10px;">New!</div>
 											<% end %>
 										</div>
