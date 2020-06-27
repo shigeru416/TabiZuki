@@ -40,6 +40,9 @@
 																			<p style="font-size:13px;"><%= l(post.created_at, format: :year) %></p>
 																			<p style="font-size:17px; margin-top: -15px; margin-bottom: -10px;"><strong><%= l(post.created_at, format: :short) %></strong>
 																			</p>
+																			<% if post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d").include?(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) == true %>
+																				<div style="color:red; font-size:14px; margin-top:10px;">New!</div>
+																			<% end %>
 																		</div>
 																	</div>
 																</div>

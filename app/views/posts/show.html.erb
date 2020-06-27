@@ -49,8 +49,6 @@
 								<div class="comment-form" style="margin-bottom:30px;" >
 									<%= render "comment_form", post: @post, post_comment: @post_comment %>
 								</div>
-							<% else %>
-								<%= link_to "質問してみる", new_user_registration_path, data: {"turbolinks" => false } %>
 							<% end %>
 						</div>
 					</div>
