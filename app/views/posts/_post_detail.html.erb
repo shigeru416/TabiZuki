@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style="margin-top:1vh;">
 	<div class="col-lg-12">
 		<div class="bxslider1">
 			<% post.post_images.each do |image|%>
@@ -9,33 +9,27 @@
 </div>
 <div class="row">
 	<div class="col-lg-12">
-		<% if user_signed_in? %>
-			<p>投稿者：<%= link_to "#{post.user.name}", user_path(post.user), data: {"turbolinks" => false } %></p>
-		<% else %>
-			<p>投稿者：<%= link_to "#{post.user.name}", new_user_registration_path, data: {"turbolinks" => false } %></p>
-		<% end %>
-
-		<p><%= post.content %></p>
+		<p><%=safe_join(post.content.split("\n"),tag(:br))%></p>
 	</div>
 </div>
 <div class="row" style="margin-top:1vw;">
 	<div class="col-lg-12">
 		<p>Tips:</p>
-		<p><%= post.tips %></p>
+		<p><%=safe_join(post.tips.split("\n"),tag(:br))%></p>
 	</div>
 </div>
 <div class="row">
 	<div class="col-lg-12" style="margin-top:1vw;">
 		<p>おすすめコース</p>
-		<p><%= post.course%></p>
+		<p><%=safe_join(post.course.split("\n"),tag(:br))%></p>
 	</div>
 </div>
 <div class="row">
 	<div class="col-lg-5">
 		<div>
 			<% post.tag_list.each do |tag| %>
-				<span class="tag-badge">
-					<%= link_to tag, searches_tag_path(tag_name: tag), style: "color:white;", data: {"turbolinks" => false} %>
+				<span class="tag-badge rounded-lg">
+					<%= link_to tag, searches_tag_path(tag_name: tag), class: "icons", style: "color:white;", data: {"turbolinks" => false} %>
 				</span>
 			<% end %>
 		</div>

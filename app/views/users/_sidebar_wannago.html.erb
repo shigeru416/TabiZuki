@@ -20,13 +20,13 @@
 						<% end %>
 					</div>
 					<div class="col-8 text-left" style="margin-top:1vh;">
-						<%= link_to "#{wannago_list.post.title}", post_path(wannago_list.post), data: {"turbolinks" => false } %>
+						<%= link_to "#{wannago_list.post.title.truncate(9)}", post_path(wannago_list.post), class: "links", data: {"turbolinks" => false } %>
 						<p><%= wannago_list.post.content.truncate(9) %></p>
 					</div>
 				<% end %>
 			<% else %>
 				<div class="col-12 text-center">
-					<p>行きたい旅を見つけよう</p>
+					<p>行きたい旅がありません</p>
 				</div>
 			<% end %>
 		</div>

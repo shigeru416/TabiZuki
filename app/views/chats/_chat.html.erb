@@ -10,7 +10,9 @@
 				<% if chat.user_id == current_user.id %>
 					<div class="row">
 						<div class="col-12" style="word-break: break-word;">
-							<p class="right_balloon"><%= chat.message %></p>
+							<p class="right_balloon">
+								<%=safe_join(chat.message.split("\n"),tag(:br))%>
+							</p>
 						</div>
 					</div>
 				<% else %>
@@ -20,7 +22,9 @@
 								<%= attachment_image_tag(user, :image, :fill, 80, 80,  fallback:"no_image.jpg", class: "rounded-circle", style: "margin-right:20px;", size: "80x80") %>
 							</div>
 							<div style="float:left;">
-								<p class="left_balloon"><%= chat.message %></p>
+								<p class="left_balloon">
+									<%=safe_join(chat.message.split("\n"),tag(:br))%>
+								</p>
 							</div>
 						</div>
 					</div>

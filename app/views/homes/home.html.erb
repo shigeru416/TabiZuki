@@ -29,7 +29,7 @@
 															<div class="row post_img">
 																<div class="col-12 text-center">
 																	<%= link_to post_path(post), data: {"turbolinks" => false } do %>
-																		<%= attachment_image_tag(post.post_images.first, :image, :fill, 500, 450, fallback: "no_image.jpg", class: "new_img rounded-lg mybox") %>
+																		<%= attachment_image_tag(post.post_images.first, :image, :fill, 500, 450, fallback: "no_image.jpg", class: "rounded-lg mybox") %>
 																	<% end %>
 																</div>
 															</div>
@@ -44,7 +44,7 @@
 																	</div>
 																</div>
 																<div class="col-8 offset-1" style="margin-top:0.5vh">
-																	<p style="font-size:20px;"><%= link_to "#{post.title}", post_path(post), style:"word-break: break-word;", data: {"turbolinks" => false }  %></p>
+																	<p style="font-size:20px;"><%= link_to "#{post.title}", post_path(post), class: "links", style:"word-break: break-word;", data: {"turbolinks" => false }  %></p>
 																</div>
 															</div>
 														</div>
@@ -53,8 +53,8 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-12 text-right">
-											<%= link_to ">>もっと見る", new_path, data: {"turbolinks" => false } %>
+										<div class="col-12 text-right" style="margin-top:-2vh">
+											<%= link_to ">>もっと見る", new_path, class: "links", data: {"turbolinks" => false } %>
 										</div>
 									</div>
 								</div>
@@ -89,7 +89,7 @@
 																	</div>
 																</div>
 																<div class="col-8 offset-1" style="margin-top:0.5vh">
-																	<p style="font-size:20px;"><%= link_to "#{post.title}", post_path(post), style:"word-break: break-word;", data: {"turbolinks" => false }  %></p>
+																	<p style="font-size:20px;"><%= link_to "#{post.title}", post_path(post), class: "links", style:"word-break: break-word;", data: {"turbolinks" => false }  %></p>
 																</div>
 															</div>
 														</div>
@@ -98,8 +98,8 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-12 text-right">
-											<%= link_to ">>もっと見る", ranking_path, data: {"turbolinks" => false} %>
+										<div class="col-12 text-right" style="margin-top:-2vh">
+											<%= link_to ">>もっと見る", ranking_path, class: "links", data: {"turbolinks" => false} %>
 										</div>
 									</div>
 								</div>
@@ -114,16 +114,16 @@
 	<div class="row bgcolor08">
 		<div class="col-8 offset-2"style="margin-top:3vw; margin-bottom:3vw;">
 			<div class="text-center">
-				<p style="font-size: 3vw;"><strong>TabiZuki Membership</strong></p>
+				<p class="title"><strong>TabiZuki Membership</strong></p>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 offset-lg-3 col-sm-12">
-					<p style="font-size: 1vw; border-left: 1px solid; padding-left:2vw; padding-top:0.5vw;">
+				<div class="col-lg-10 offset-lg-1 col-sm-12">
+					<p style="font-size: 20px; border-left: 1px solid; padding-left:2vw; padding-top:0.5vw;">
 						<% if user_signed_in? %>
 							TabiZuki（旅好き）をより深く、よりパーソナルにご利用いただける、メンバーシッププログラム。メンバーのみなさまと旅を共有していただき、旅を上質なものにしていく。あなた史上最高の旅を見つけ、早く旅に行きたいとわくわくが止まらない...そんな「心躍る“ひととき”」を体験していただけます。
 						<% else %>
 							TabiZuki（旅好き）をより深く、よりパーソナルにご利用いただける、メンバーシッププログラム。メンバーのみなさまと旅を共有していただき、旅を上質なものにしていく。あなた史上最高の旅を見つけ、早く旅に行きたいとわくわくが止まらない...そんな「心躍る“ひととき”」を体験していただけます。<br>
-							<%= link_to "ー View More", tabizukimembership_path, style: "color:black;"%>
+							<%= link_to "－ View More", tabizukimembership_path, style: "color:black;"%>
 						<% end %>
 					</p>
 				</div>

@@ -6,6 +6,7 @@
           <div class="user_infomation_title">
             <div class="user_info_detail" style="margin-bottom: 20px;">
               <%= render "users/sidebar_user", user: @user %>
+              <%= render "users/sidebar_user_follow_chat", user: @user %>
             </div>
             <div class="wannago_detail">
               <%= render "users/sidebar_wannago" , user: @user %>
@@ -20,7 +21,7 @@
           </div>
           <div class="row">
             <div class="col-10 offset-1 text-center">
-              <p>フォローしてみよう</p>
+              <p>フォローがいません</p>
             </div>
           </div>
         </div>

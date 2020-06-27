@@ -1,7 +1,7 @@
 <p class="text-center" style="margin-top:20px;">
 	<%= user.name%>
 	<% if @user == current_user %>
-		<%= link_to "", edit_user_path(user), class: "fas fa-user-edit", data: {"turbolinks" => false} %>
+		<%= link_to "", edit_user_path(user), class: "fas fa-user-edit icons", data: {"turbolinks" => false} %>
 	<% end %>
 </p>
 <div class="row">
@@ -17,13 +17,15 @@
 <div class="row">
 	<div class="col-12">
 		<div class="row">
-			<div class="col-4 text-center">
+			<div class="col-12 text-center">
 				<p>投稿<br><%= link_to "#{user.posts.count}", user_path(user) %></p>
 			</div>
-			<div class="col-4 text-center">
+		</div>
+		<div class="row">
+			<div class="col-6 text-center">
 				<p>フォロー<br><%= link_to user.follower.count, user_follows_path(user) %></p>
 			</div>
-			<div class="col-4 text-center">
+			<div class="col-6 text-center">
 				<p>フォロワー<br><%= link_to user.followed.count, user_followers_path(user) %></p>
 			</div>
 		</div>

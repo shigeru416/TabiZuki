@@ -18,8 +18,6 @@ class Post < ApplicationRecord
 	validates :place, presence: true
 	validates :category_id, presence: true
 	validates :content, presence: true
-	validates :tips, presence: true
-	validates :course, presence: true
 
 	def favorited_by?(user)
     	favorites.where(user_id: user.id).exists?

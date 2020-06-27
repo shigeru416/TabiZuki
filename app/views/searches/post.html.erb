@@ -6,16 +6,32 @@
   </div>
   
   <div class="row bg-color07">
-    <div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:6vw;">
+    <div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:5vw;">
       <div class="row">
         <% if @posts.present? %>
           <% @posts.each do |post| %>
-            <div class="col-sm-3 col-12 text-center post_img" style="margin-top:1vw;">
-                <%= link_to post_path(post), data: {"turbolinks" => false } do %>
-                  <div calss="post_timeline_favorite">
-                    <%= attachment_image_tag(post.post_images.first, :image, :fill, 500, 450, fallback: "no_image.jpg", class: "post_timeline_favorite_img rounded-lg mybox") %>
+            <div class="col-sm-3 col-12">
+              <div class="row post_img">
+                <div class="col-12 text-center" style="margin-top:1vw;" >
+                  <%= link_to post_path(post), data: {"turbolinks" => false } do %>
+                    <%= attachment_image_tag(post.post_images.first, :image, :fill, 500, 450, fallback: "no_image.jpg", class: "rounded-lg mybox") %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1" style="margin-top:0.5vh">
+                  <div class="row">
+                    <div class="col-12">
+                      <p style="font-size:13px;"><%= l(post.created_at, format: :year) %></p>
+                      <p style="font-size:17px; margin-top: -15px; margin-bottom: -10px;"><strong><%= l(post.created_at, format: :short) %></strong>
+                      </p>
+                    </div>
                   </div>
-                <% end %>
+                </div>
+                <div class="col-8 offset-1" style="margin-top:0.5vh">
+                  <p style="font-size:20px;"><%= link_to "#{post.title}", post_path(post), class: "links", style:"word-break: break-word;", data: {"turbolinks" => false }  %></p>
+                </div>
+              </div>
             </div>
           <% end %>
         <% else%>

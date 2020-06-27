@@ -8,8 +8,8 @@
 						<% end %>
 					</div>
 					<div class="col-7" style="margin-top:20px;">
-						<%= link_to "#{browsing_history.post.title}", post_path(browsing_history.post), style:"word-break: break-word;",  data: {"turbolinks" => false } %>
-						<p><%= browsing_history.post.content.truncate(28) %></p>
+						<%= link_to "#{browsing_history.post.title.truncate(28)}", post_path(browsing_history.post), class: "links", style:"word-break: break-word;",  data: {"turbolinks" => false } %>
+						<p><%=safe_join(browsing_history.post.content.truncate(28).split("\n"),tag(:br))%></p>
 					</div>
 			<% end %>
 		</div>

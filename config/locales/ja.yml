@@ -1,4 +1,13 @@
 ja:
+  activerecord:
+    attributes:
+      post:
+        category: カテゴリー
+        title: タイトル
+        Post-images-images: 画像
+        place: 場所
+        content: 旅の紹介
+
   time:
     formats:
       default: "%Y/%m/%d"

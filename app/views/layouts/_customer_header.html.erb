@@ -3,11 +3,11 @@
     <%= link_to root_path, class: "navbar-brand", data: {"turbolinks" => false} do%>
       <%= image_tag "logo5.png", :size => '110x95' %>
     <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglertarget" aria-controls="navbarTogglertarget" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="navbarTogglertarget">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
           <%= link_to "マイページ", user_path(current_user), class: "nav-link", data: {"turbolinks" => false}  %>

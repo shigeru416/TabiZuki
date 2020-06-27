@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Noto Serif JP', serif;
 }
 
 main{
@@ -43,11 +44,11 @@ footer {
 
 /*いいね・行きたいリストボタン*/
 .wannago{
-	float: left;
+  display:inline-block;
 }
 
 .favorite{
-	floate: left;
+  display:inline-block;
 }
 /*いいね・行きたいリストボタン*/
 
@@ -151,7 +152,7 @@ footer {
 }
 
 .home_title{
-  font-size: 6vw;
+  font-size: calc((30% + 2.5vw) * 2);
   color: rgba(255, 255, 255, 0.9);
 }
 /* ホーム画面（スライドショー前面の文字定義） */
@@ -167,7 +168,6 @@ footer {
 .timeline_title{
   font-size: 10vw;
   color: black;
-  font-family: 'Kaushan Script', cursive;
 }
 
 .bg-color01{
@@ -186,7 +186,6 @@ footer {
 .favorites_title{
 	font-size: 10vw;
 	color: black;
-	font-family: 'Kaushan Script', cursive;
 }
 
 .bg-color02{
@@ -205,7 +204,6 @@ footer {
 .ranking_title{
   font-size: 10vw;
   color: black;
-  font-family: 'Kaushan Script', cursive;
 }
 
 .bg-color03{
@@ -224,7 +222,6 @@ footer {
 .new_title{
   font-size: 10vw;
   color: black;
-  font-family: 'Kaushan Script', cursive;
 }
 
 .bg-color04{
@@ -319,10 +316,6 @@ footer {
   height: 39vw;
 }
 
-.post_title{
-  float: left;
-}
-
 .bg06 {
   background-image: image-url("bg06.jpg");
   background-position: top;
@@ -332,7 +325,7 @@ footer {
 
 
 /* 投稿詳細（マップ）*/
-#map { 
+#map {
   height: 20vw;
   width:100%;
 }
@@ -348,7 +341,7 @@ footer {
 
 .chat_form {
   margin-top: 30px;
-  margin-bottom: 50px
+  margin-bottom: 30px
 }
 
 .bg08{
@@ -435,7 +428,13 @@ footer {
 /* チャット吹き出し */
 
 
-/* 投稿画像ホバー */
+/* 投稿画像サイズ・ホバー */
+.post_img img{
+width: 100%;
+  height:auto;
+  max-height:23vh;
+}
+
 .post_img img:hover{
   -webkit-backface-visibility: hidden; /* 1px右にずれる現象防止 */
   backface-visibility: hidden; /* 1px右にずれる現象防止 */
@@ -545,8 +544,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 /* その他タイトル・背景 */
 .title{
-  font-size: 5vw;
-  font-family: 'Kaushan Script', cursive;
+  font-size: calc((80% + 1vw) * 2);
 }
 
 .bgcolor07{
@@ -558,13 +556,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 /* タグ */
 .tag-badge {
   padding: 3px 6px;
-  margin-right: 8px;
-  margin-left: 1px;
-  font-size: 75%;
   color: white;
-  border-radius: 6px;
   box-shadow: 0 0 3px #ddd;
-  white-space: nowrap;
   background-color: #17a2b8;
 }
 /* タグ */
@@ -585,9 +578,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 
 /*　タグでの検索後の画面　*/
 .searches_title{
-  font-size: 8vw;
+  font-size: calc((30% + 2.5vw) * 2);
   color: black;
-  font-family: 'Kaushan Script', cursive;
 }
 /*　タグでの検索後の画面　*/
 
@@ -602,7 +594,6 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 /* メンバーシップ画面 */
 .new-btn{
   display:inline-block;
-  width: 15vw;
   min-width:150px;
   max-height:70px;
   line-height: 70px;
@@ -618,6 +609,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 .new-btn:hover{
      background-color: #17a2b8; /*ボタン色*/
      color:white;
+     text-decoration: none;
 }
 /* メンバーシップ画面 */
 
@@ -630,3 +622,47 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   }
 }
 /* バリデーション */
+
+/* アバウト・メンバーシップページ */
+
+.about_title{
+  font-size: calc((80% + 1.5vw) * 2);
+}
+
+.about_membership{
+  font-size: calc((40% + 1vw) * 2);
+}
+
+.about_membership_content{
+  font-size: calc((25% + 1vw) * 2);
+}
+
+.about_membership_sentence{
+  font-size: calc((25% + 0.5vw) * 2);
+}
+
+.membership_title{
+  font-size: calc((50% + 1.0vw) * 2);
+}
+/* アバウト・メンバーシップページ */
+
+/*　リンクの下線消し・色*/
+.links{
+  text-decoration: none;
+  color:black;
+}
+.links:hover{
+  text-decoration: none;
+  color:black;
+}
+/*　リンクの下線消し・色*/
+
+/* いいね・行きたいリストアイコン */
+.icons{
+  text-decoration: none;
+}
+
+.icons:hover{
+  text-decoration: none;
+}
+/* いいね・行きたいリストアイコン */
