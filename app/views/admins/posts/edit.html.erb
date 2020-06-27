@@ -16,39 +16,39 @@
 	<div class="container-fluid">
 	 	<div class="row">
 	 		<div class="col-8 offset-2">
-				<div class="row post">
-		 			<%= f.label :title, :タイトル %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+		 			<%= f.label :title, :・タイトル %><br >
 					<%= f.text_field :title, autofocus: true, class: "form-control" %>
 				</div>
-				<div class="row post">
+				<div class="row post" style="margin-bottom:3vh;">
 					<%= f.attachment_field :post_images_images, multiple: true %>
 				</div>
-				<div class="row post">
-					<%= f.label :place, :場所名 %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :place, :・場所名 %><br >
 					<%= f.text_field :place, autofocus: true, class: "form-control" %>
 				</div>
-				<div class="row post">
-					<%= f.label :category_id, :カテゴリー %>
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :category_id, :・カテゴリー %>
 					<%= f.collection_select :category_id, @categories, :id, :name, include_blank: "選択してください" %>
 				</div>
-				<div class="row post">
-					<%= f.label :content, :旅の紹介 %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :content, :・旅の紹介 %><br >
 					<%= f.text_area :content, autofocus: true, class: "form-control" %>
 				</div>
-				<div class="row post">
-					<%= f.label :tips, :Tips（お得情報や注意した方がよいことなど） %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :tips, :・Tips（お得情報や注意した方がよいことなど） %><br >
 					<%= f.text_area :tips, autofocus: true, class: "form-control"  %>
 				</div>
-				<div class="row post">
-					<%= f.label :course, :おすすめコース %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :course, :・おすすめコース %><br >
 					<%= f.text_area :course, autofocus: true, class: "form-control" %>
 				</div>
-				<div class="row post">
-					<%= f.label :tag_list, :'タグを入力(例　アメリカ,ニューヨーク)' %><br >
+				<div class="row post" style="margin-bottom:3vh;">
+					<%= f.label :tag_list, :'・タグを入力(例　アメリカ,ニューヨーク,ひとり旅)' %><br >
 					<%= f.text_field :tag_list, value: @post.tag_list.join(','), autofocus: true, class: "form-control"  %>
 				</div>
 				<div class="row">
-						<%= f.submit "更新する", class: "btn btn-xs btn-info" %>
+						<%= f.submit "更新する", class: "btn btn-outline-info", data: {"turbolinks" => false } %>
 				</div>
 		 	</div>
 	 	</div>

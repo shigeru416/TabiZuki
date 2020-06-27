@@ -10,7 +10,7 @@
 		<div class="col-10 offset-1" style="margin-top:5vw; margin-bottom:5vw;">
 			<div class="row">
 				<% @posts.each do |post| %>
-					<div class="col-sm-3 col-12">
+					<div class="col-sm-3 col-12" style="margin-bottom:5vh">
 			          <div class="row post_img">
 			            <div class="col-12 text-center" style="margin-top:1vw;" >
 			              <%= link_to post_path(post), data: {"turbolinks" => false } do %>

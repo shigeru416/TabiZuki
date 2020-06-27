@@ -2,52 +2,63 @@
 	<div class="row">
 		<div class="col-10 offset-1">
 			<div class="row">
-				<div class="col-lg-6 col-sm-12">
+				<div class="col-lg-6 col-sm-12" style="margin-top:20px;">
 					<div class="row">
-						<%= link_to "編集する", edit_admins_post_path(@post), class: "btn btn-info" %>
-						<%= link_to "削除する", admins_post_path(@post), data: { confirm: "本当に削除しますか?" }, method: :delete, class: "btn btn-info" %>
+						<div class="col-12">
+							<%= link_to "編集する", edit_admins_post_path(@post), class: "btn btn-outline-info" %>　
+							<%= link_to "削除する", admins_post_path(@post), data: { confirm: "本当に削除しますか?" }, method: :delete, class: "btn btn-outline-info" %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12" style="margin-top:20px;">
+							投稿者：<%= link_to "#{@post.user.name}", admins_user_path(@post.user), class: "links" %>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<%= @post.title %>　｜　場所：<%= @post.place %>
+							<%= @post.title %>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<div class="bxslider1">
 								<% @post.post_images.each do |image|%>
-										<%= attachment_image_tag image, :image, fallback: "no_image.jpg", class: "posting_img" %>
+										<%= attachment_image_tag image, :image, fallback: "no_image.jpg" %>
 								<% end %>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<%= @post.content %>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-12">
-					<div class="row" style="margin-top:6vw;">
+					<div class="row" style="margin-top:10vw;">
 						<div class="col-12">
-							<%= @post.tips %>
+							<p><%=safe_join(@post.content.split("\n"),tag(:br))%></p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-7">
-						<p><%= @post.course%></p>
+						<div class="col-12">
+							<p>Tips：<br>
+							<%=safe_join(@post.tips.split("\n"),tag(:br))%></p><p><%=safe_join(@post.content.split("\n"),tag(:br))%></p>
 						</div>
-						<div class="col-5">
-							<div class="row">
-								<% @post.tag_list.each do |tag| %>
-									<span class="tag-badge">
-										<%= link_to tag, admins_searches_tag_path(tag_name: tag), style: "color:white;", data: {"turbolinks" => false}  %>
-									</span>
-								<% end %>
-							</div>
-							<div class="row">
-								投稿者：<%= @post.user.name %>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<p>おすすめコース:：<br>
+							<%=safe_join(@post.course.split("\n"),tag(:br))%></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<% @post.tag_list.each do |tag| %>
+								<span class="tag-badge rounded-lg">
+									<%= link_to tag, admins_searches_tag_path(tag_name: tag), style: "color:white;", class: "icons",  data: {"turbolinks" => false}  %>
+								</span>
+							<% end %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							場所：<%= @post.place %>
 						</div>
 					</div>
 					<div class="row" style="margin-top:6vw;">

@@ -5,7 +5,7 @@
 				<div class="col-12 text-right">
 				<%= search_form_for @q, url:admins_users_path do |f| %>
 				    <%= f.search_field :name_cont, autofocus: true, placeholder: "user name" %>
-				    <%= f.submit "検索", class: "btn btn-info" %>
+				    <%= f.submit "検索", class: "btn btn-outline-info" %>
 				<% end %>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 								<%= user.introduction -%>
 							</td>
 							<td>
-								<%= link_to "詳細", admins_user_path(user), class: "btn btn-info" %>
+								<%= link_to "詳細", admins_user_path(user), class: "btn btn-outline-info" %>
 							</td>
 						</tr>
 					<% end %>

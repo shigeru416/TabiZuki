@@ -10,7 +10,7 @@
 			<div class="row">
 				<% if @user_posts.present? %>
 					<% @posts.each do |follower_post|%>
-						<div class="col-sm-3 col-12">
+						<div class="col-sm-3 col-12" style="margin-bottom:5vh">
 							<div class="row post_img">
 								<div class="col-12 text-center" style="margin-top:1vw;" >
 									<%= link_to post_path(follower_post), data: {"turbolinks" => false } do %>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row fixed-bg bg02">
 		<div class="col-12 fixed-bg bg02 box">
-			<p class="favorites_title"><strong>Favotites</strong></p>
+			<p class="favorites_title"><strong>Favorites</strong></p>
 		</div>
 	</div>
 
@@ -10,7 +10,7 @@
 			<div class="row">
 				<% if @user_favorites.present? %>
 					<% @posts.each do |favorite|%>
-						<div class="col-sm-3 col-12">
+						<div class="col-sm-3 col-12" style="margin-bottom:5vh">
 							<div class="row post_img">
 								<div class="col-12 text-center" style="margin-top:1vw;" >
 									<%= link_to post_path(favorite.post), data: {"turbolinks" => false } do %>

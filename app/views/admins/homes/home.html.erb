@@ -7,10 +7,14 @@
 					<% @post_today = @posts.map{|a| a.created_at.in_time_zone('Japan').strftime("%Y/%m/%d")} %>
 					<% @post_today_tocount = @post_today.pluck(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) %>
 					<% @post_today_tocount.delete(nil)%>
-					<p style="font-size: 5vw; padding-top:200px;"><strong>本日の旅　<%= link_to @post_today_tocount.count, admins_homes_today_path %> 件</strong></p>
+					<p class="title" style=" padding-top:200px;">
+						<strong>
+							本日の旅　<%= link_to @post_today_tocount.count, admins_homes_today_path, class: "links" %> 件
+						</strong>
+					</p>
 
 				<% elsif @posts.map{|a| a.created_at.in_time_zone('Japan').strftime("%Y/%m/%d")}.include?(Date.today.in_time_zone('Japan').strftime("%Y/%m/%d")) == false %>
-					<p style="font-size: 5vw; padding-top:200px;"><strong>本日の旅 0 件</strong></p>
+					<p class="title" style="padding-top:200px;"><strong>本日の旅 0 件</strong></p>
 
 				<% end %>
 			</div>

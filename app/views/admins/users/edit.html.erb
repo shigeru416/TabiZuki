@@ -15,26 +15,25 @@
 						</ul>
 					</div>
 				<% end %>
-				<div>
+				<div style="margin-bottom:3vh;">
 					<%= f.label :name, :ユーザー名 %><br>
 					<%= f.text_field :name, autofocus: true %>
 				</div>
-				<div>
+				<div style="margin-bottom:3vh;">
 					<%= attachment_image_tag(@user, :image, :fill, 150, 150, class: "rounded-circle", fallback: "no_image.jpg", size: "150x150") %>
 				</div>
-				<div>
-					<%= f.label :image, :プロフィール %><br>
+				<div style="margin-bottom:3vh;">
 					<%= f.attachment_field :image %>
 				</div>
-				<div>
+				<div style="margin-bottom:3vh;">
 					<%= f.label :email, :メールアドレス %><br>
 					<%= f.email_field :email, autofocus: true %>
 				</div>
-				<div>
+				<div style="margin-bottom:3vh;">
 					<%= f.label :introduction, :紹介文 %><br>
 					<%= f.text_area :introduction, autofocus: true, placeholder: "紹介文"%>
 				</div>
-				<%= f.submit "更新する", class: "btn btn-info" %>
+				<%= f.submit "更新する", class: "btn btn-outline-info" %>
 			<% end %>
 		</div>
 	</div>
