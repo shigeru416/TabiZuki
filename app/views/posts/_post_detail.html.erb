@@ -2,7 +2,7 @@
 	<div class="col-lg-12">
 		<div class="bxslider1">
 			<% post.post_images.each do |image|%>
-					<%= attachment_image_tag image, :image, :fill, 1000, 850, fallback: "no_image.jpg", class: "posting_img" %>
+					<%= attachment_image_tag image, :image, fallback: "no_image.jpg", class: "posting_img" %>
 			<% end %>
 		</div>
 	</div>
