@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
-  validates :name, presence: true
+  validates :name, presence: true, length: {maximum: 20}
   validates :introduction, length: {maximum: 50}
   
   def follow(user_id)
