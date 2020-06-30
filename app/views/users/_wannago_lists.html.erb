@@ -4,8 +4,8 @@
 	</div>
 </div>
 <div class="row">
-	<% if user.wannago_lists.count > 0 %>
-			<% posts.each do |wannago_list|%>
+	<% if posts.count > 0 %>
+		<% posts.each do |wannago_list|%>
 			<div class="col-sm-4 col-12" style="margin-bottom:5vh">
 				<div class="row post_img">
 					<div class="col-12 text-center">
@@ -21,7 +21,7 @@
 								<p style="font-size:13px;"><%= l(wannago_list.post.created_at, format: :year) %></p>
 								<p style="font-size:17px; margin-top: -15px; margin-bottom: -10px;"><strong><%= l(wannago_list.post.created_at, format: :short) %></strong>
 								</p>
-								<% if wannago_list.post.created_at.in_time_zone('Japan') == Time.current.in_time_zone('Japan').strftime("%Y/%m/%d")%>
+								<% if wannago_list.post.created_at.in_time_zone('Japan').strftime("%Y/%m/%d") == Time.current.in_time_zone('Japan').strftime("%Y/%m/%d")%>
 									<div style="color:red; font-size:14px; margin-top:10px;">New!</div>
 								<% end %>
 							</div>
