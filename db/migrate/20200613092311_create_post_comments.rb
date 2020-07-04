@@ -4,7 +4,8 @@ class CreatePostComments < ActiveRecord::Migration[5.2]
 
       t.string :user_id
       t.string :post_id
-      t.string :comment
+      t.text :comment
+      t.decimal :score, precision: 5, scale: 3
       t.timestamps
     end
   end

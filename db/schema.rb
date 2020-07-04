@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_143635) do
+ActiveRecord::Schema.define(version: 2020_06_13_111834) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,7 +55,8 @@ ActiveRecord::Schema.define(version: 2020_06_24_143635) do
   create_table "post_comments", force: :cascade do |t|
     t.string "user_id"
     t.string "post_id"
-    t.string "comment"
+    t.text "comment"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,11 +72,11 @@ ActiveRecord::Schema.define(version: 2020_06_24_143635) do
     t.integer "user_id"
     t.integer "category_id"
     t.string "title"
-    t.string "content"
+    t.text "content"
     t.string "place"
-    t.string "tips"
-    t.string "course"
-    t.string "favorite_count"
+    t.text "tips"
+    t.text "course"
+    t.integer "favorite_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,11 +89,6 @@ ActiveRecord::Schema.define(version: 2020_06_24_143635) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

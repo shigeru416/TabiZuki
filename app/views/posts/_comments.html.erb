@@ -22,11 +22,18 @@
 		</td>
 		<td>
 			<p><%=safe_join(post_comment.comment.split("\n"),tag(:br))%></p>
+			<span class="comment-score">
+                <span class="comment-score"><%= post_comment&.score %></span>
+            </span>
 		</td>
 		<td width="130">
 			<%= post_comment.created_at.strftime('%Y/%m/%d') %>
 			<% if current_user == post_comment.user %>
 				<%= link_to '', post_post_comments_path(post_comment), method: :delete, class: "far fa-trash-alt", remote: true %>
+			<% elsif current_user == post_comment.post.user %>
+				<%if post_comment.score < -0.3 %>
+					<%= link_to '', post_post_comments_path(post_comment), method: :delete, class: "far fa-trash-alt", remote: true %>
+				<% end %>
 			<% end %>
 		</td>
 	</tr>

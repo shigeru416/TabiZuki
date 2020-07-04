@@ -5,11 +5,11 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :category_id
       t.string :title
-      t.string :content
+      t.text :content
       t.string :place
-      t.string :tips
-      t.string :course
-      t.string :favorite_count
+      t.text :tips
+      t.text :course
+      t.integer :favorite_count
       t.timestamps
     end
   end
