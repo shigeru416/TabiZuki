@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 	    	get :list
 	    end
 	end
+	resources :vision_images, only: [:new, :create, :show]
 	resources :chats, only: [:create]
 	resources :categories, only: [:show]
 
