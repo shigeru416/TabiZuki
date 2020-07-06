@@ -1,44 +1,41 @@
-<section class="slice sct-color-1">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 post_image_form">
-            <div class="section-title-wrapper style-1 v1">
-              <h3 class="section-title section-title-sm left">
-                <span>画像投稿フォーム</span>
-              </h3>
-            </div>
-            <%= form_for(@vision_image, url: vision_images_path) do |f| %>
-              <div class="row">
-                <div class="col-sm-12">
-                  <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new", fallback: "no_image.jpg") %>
-                  <script>
-                    $(function() {
-                      $(document).on('turbolinks:load',() => {
-                        function readURL(input) {
-                            if (input.files && input.files[0]) {
-                            var reader = new FileReader();
-                            reader.onload = function (e) {
-                        $('#preview').attr('src', e.target.result);
-                            }
-                            reader.readAsDataURL(input.files[0]);
-                            }
-                        }
-                        $("#item_img").change(function(){
-                            readURL(this);
-                        });
-                      });
-                      });
-                  </script>
-                  <%= f.attachment_field :image, id: :item_img, class: "vision_image" %>
-                </div>
-              </div>
-              <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="vision_title">画像検索フォーム</p>
     </div>
   </div>
-</section>
+  <div class="row">
+    <div class="col-6 offset-3">
+      <%= form_for(@vision_image, url: vision_images_path) do |f| %>
+        <div class="text-center">
+          <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new", fallback: "no_image.png") %><br>
+        </div>
+        <script>
+          $(function() {
+            $(document).on('turbolinks:load',() => {
+              function readURL(input) {
+                  if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+              $('#preview').attr('src', e.target.result);
+                  }
+                  reader.readAsDataURL(input.files[0]);
+                  }
+              }
+              $("#item_img").change(function(){
+                  readURL(this);
+              });
+            });
+            });
+        </script>
+        <div class="text-center" style="margin-top:30px;">
+         <%= f.attachment_field :image, id: :item_img, class: "vision_image" %>
+        </div>
+        <div style="margin-top:30px;">
+        <%= f.submit "検索", class:"btn btn-outline-info w-100" %>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+

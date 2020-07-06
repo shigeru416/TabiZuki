@@ -672,14 +672,14 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 /* ページネーションデザイン */
 
-.label_box {
+.vision_box {
     position: relative;
     margin: 2em 0;
     padding: 0.5em 1em;
     border: solid 3px #17a2b8;
     width:100%;
 }
-.label_box .box-title {
+.vision_box .box-title {
     position: absolute;
     display: inline-block;
     top: -27px;
@@ -693,32 +693,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
     font-weight: bold;
     border-radius: 5px 5px 0 0;
 }
-.label_box p {
-    margin: 0;
-    padding: 0;
-}
-
-.landmark_box {
-    position: relative;
-    margin: 2em 0;
-    padding: 0.5em 1em;
-    border: solid 3px #17a2b8;
-}
-.landmark_box .box-title {
-    position: absolute;
-    display: inline-block;
-    top: -27px;
-    left: -3px;
-    padding: 0 9px;
-    height: 25px;
-    line-height: 25px;
-    font-size: 17px;
-    background: #17a2b8;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
-.landmark_box p {
+.vision_box p {
     margin: 0;
     padding: 0;
 }
@@ -729,7 +704,12 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 .vision_title{
-  font-size: calc((30% + 2.5vw) * 2);
+  font-size: calc((30% + 1.5vw) * 2);
+}
+
+.vision-new{
+  width: 30vw;
+  height:auto;
 }
 
 /* 管理者画面（旅投稿）*/
