@@ -13,6 +13,24 @@
               <div class="row">
                 <div class="col-sm-12">
                   <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new", fallback: "no_image.jpg") %>
+                  <script>
+                    $(function() {
+                      $(document).on('turbolinks:load',() => {
+                        function readURL(input) {
+                            if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                        $('#preview').attr('src', e.target.result);
+                            }
+                            reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                        $("#item_img").change(function(){
+                            readURL(this);
+                        });
+                      });
+                      });
+                  </script>
                   <%= f.attachment_field :image, id: :item_img, class: "vision_image" %>
                 </div>
               </div>
