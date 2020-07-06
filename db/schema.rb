@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_115333) do
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
-    t.string "message"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

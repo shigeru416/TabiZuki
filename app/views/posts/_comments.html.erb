@@ -22,9 +22,6 @@
 		</td>
 		<td>
 			<p><%=safe_join(post_comment.comment.split("\n"),tag(:br))%></p>
-			<span class="comment-score">
-                <span class="comment-score"><%= post_comment&.score %></span>
-            </span>
 		</td>
 		<td width="130">
 			<%= post_comment.created_at.strftime('%Y/%m/%d') %>
