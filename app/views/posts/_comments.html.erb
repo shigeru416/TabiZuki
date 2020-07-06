@@ -28,7 +28,7 @@
 			<% if current_user == post_comment.user %>
 				<%= link_to '', post_post_comments_path(post_comment), method: :delete, class: "far fa-trash-alt", remote: true %>
 			<% elsif current_user == post_comment.post.user %>
-				<%if post_comment.score < -0.3 %>
+				<%if post_comment.score < -0.2 %>
 					<%= link_to '', post_post_comments_path(post_comment), method: :delete, class: "far fa-trash-alt", remote: true %>
 				<% end %>
 			<% end %>
