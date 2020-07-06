@@ -153,12 +153,16 @@ ActiveRecord::Schema.define(version: 2020_07_05_115333) do
     t.string "location"
     t.string "latitude"
     t.string "longitude"
+    t.string "vision_image_id"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "vision_tags", force: :cascade do |t|
     t.string "name"
+    t.string "vision_image_id"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

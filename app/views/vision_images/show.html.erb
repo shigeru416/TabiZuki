@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<div clas="row">
+				<div class="col-12 text-center">
+					<p class="vision_title">画像検索</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 col-12">
+					<div clas="row">
+						<div class="col-12 text-center">
+							<div>
+								<%= attachment_image_tag @vision_image, :image, class: "vision_img mybox" %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 col-12">
+					<div class="col-12">
+						<% if @vision_image.vision_tags.present? %>
+								<div class="label_box" style="display: inline-block; margin-right:10px;">
+								    <span class="box-title">検出結果</span>
+								    <div style="overflow: auto; height:60vh;">
+								    	<% if @vision_image.vision_landmarks.present? %>
+									    	<% @vision_image.vision_landmarks.first(1).each do |landmark| %>
+										    	<p><%= landmark.name %></p>
+										    	<div class="progress">
+												  <div class="progress-bar" role="progressbar" style="width:  <%= landmark.score * 100 %>%;"><%= landmark.score * 100 %>%</div>
+												</div>
+												<% if landmark.location != nil %>
+													<div id='map' style="margin-bottom: 20px;"></div>
+													<script>
+														function initMap(){
+														  let map = new google.maps.Map(document.getElementById('map'), {
+														  center: {lat: <%= landmark.latitude %>, lng: <%= landmark.longitude %>},
+														  zoom: 8
+														  });
+														  let marker = new google.maps.Marker({
+														    position:  {lat: <%= landmark.latitude %>, lng:<%= landmark.longitude %>},
+														    map: map
+														  });
+														}
+													</script>
+													<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+												<% end %>
+									    	<% end %>
+									    <% end %>
+									    <% @vision_image.vision_tags.each do |tag| %>
+									    	<p><%= tag.name %></p>
+									    	<div class="progress" style="margin-bottom: 20px;">
+											  <div class="progress-bar" role="progressbar" style="width:  <%= tag.score * 100 %>%;"><%= tag.score * 100 %>%</div>
+											</div>
+									    <% end %>
+								    </div>
+								</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

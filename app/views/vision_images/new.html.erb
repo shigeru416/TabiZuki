@@ -12,7 +12,8 @@
             <%= form_for(@vision_image, url: vision_images_path) do |f| %>
               <div class="row">
                 <div class="col-sm-12">
-                  <%= f.attachment_field :image %>
+                  <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new", fallback: "no_image.jpg") %>
+                  <%= f.attachment_field :image, id: :item_img, class: "vision_image" %>
                 </div>
               </div>
               <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20" %>

@@ -6,6 +6,8 @@ class CreateVisionLandmarks < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :latitude
       t.string :longitude
+      t.string :vision_image_id
+      t.decimal :score, precision: 5, scale: 3
       t.timestamps
     end
   end
