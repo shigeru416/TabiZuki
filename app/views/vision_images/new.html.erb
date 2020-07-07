@@ -8,7 +8,7 @@
     <div class="col-6 offset-3">
       <%= form_for(@vision_image, url: vision_images_path) do |f| %>
         <div class="text-center">
-          <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new", fallback: "no_image.png") %><br>
+          <%= attachment_image_tag(@vision_image, :image, id: "preview", class: "vision-new mybox", fallback: "no_image.png") %><br>
         </div>
         <script>
           $(function() {
