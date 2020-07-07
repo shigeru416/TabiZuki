@@ -25,6 +25,7 @@
 										</div>
 										<% if landmark.location != nil %>
 											<div id='map' style="margin-bottom: 20px;"></div>
+
 											<script>
 												function initMap(){
 												  let map = new google.maps.Map(document.getElementById('map'), {
@@ -38,6 +39,7 @@
 												}
 											</script>
 											<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+
 										<% end %>
 							    	<% end %>
 							    <% end %>

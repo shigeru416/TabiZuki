@@ -267,19 +267,19 @@ footer {
 }
 
 .browsing_history_content{
-  background-color: #fff; /* 背景色 */
-  border: 1px solid #ccc; /* 線の太さ・種類・色 */
+  background-color: #fff;
+  border: 1px solid #ccc;
   box-shadow: 1px 1px 6px 0px #ccc;
   -moz-box-shadow: 1px 1px 6px 0px #ccc;
   -webkit-box-shadow: 1px 1px 6px 0px #ccc;
   -o-box-shadow: 1px 1px 6px 0px #ccc;
-  margin: 20px 5px; /* 外側の余白 上下・左右 */
-  padding: 30px 20px 20px 20px; /* 内側の余白 上・右・下・左 */
+  margin: 20px 5px;
+  padding: 30px 20px 20px 20px;
   position: relative;
   z-index: 0;
 }
 .browsing_history_content:after{
-  background-color: #17a2b8; /* マステ色*/
+  background-color: #17a2b8;
   background-position: 0 0, 12px 12px;
   background-size: 24px 24px;
   border-left: 2px dotted rgba(255,255,255,0.9);
@@ -289,7 +289,7 @@ footer {
   display: block;
   margin: 0 0 10px 0;
   padding: 5px 20px;
-  color: #fff;  /* マステ部分文字色 */
+  color: #fff;
   text-align: center;
   position: absolute;
   top: -10px;
@@ -588,13 +588,13 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   text-decoration: none;
   text-align: center;
   border: 1px solid #17a2b8;
-  background-color: #FFF; /*ボタン色*/
-  border-radius: 5px; /*角丸*/
+  background-color: #FFF;
+  border-radius: 5px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 .new-btn:hover{
-     background-color: #17a2b8; /*ボタン色*/
+     background-color: #17a2b8;
      color:white;
      text-decoration: none;
 }
@@ -646,6 +646,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
 /*　リンクの下線消し・色*/
 
+
 /* いいね・行きたいリストアイコン */
 .icons{
   text-decoration: none;
@@ -671,6 +672,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   border-color: black;
 }
 /* ページネーションデザイン */
+
 
 /*　画像検索画面 */
 .vision_box {
@@ -712,7 +714,10 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   width: 30vw;
   height:auto;
 }
+/*　画像検索画面 */
 
+
+/*　画像検索画面（アニメーション）*/
 .progress-bar{
   animation: bar-animation 1 2s;
 }
@@ -722,8 +727,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
     width: 0px;
   }
 }
-
-/*　画像検索画面 */
+/*　画像検索画面（アニメーション）*/
 
 
 /* 管理者画面（旅投稿）*/

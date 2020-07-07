@@ -1,8 +1,14 @@
 class VisionImage < ApplicationRecord
-
+# --------------------------------------
+# Relations
+# --------------------------------------
 	has_many :vision_tags
 	has_many :vision_landmarks
 
-	attachment :image
+# --------------------------------------
+# Validations
+# --------------------------------------
 	validates :image, presence: true
+
+	attachment :image
 end

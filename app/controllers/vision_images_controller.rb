@@ -1,5 +1,7 @@
 class VisionImagesController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def new
 		@vision_image = VisionImage.new
 	end
@@ -11,16 +13,6 @@ class VisionImagesController < ApplicationController
 			tags.each do |tag|
 				@vision_image.vision_tags.create(name: tag[0], score: tag[1])
 			end
-			#landmarks = Vision.get_image_data(@vision_image.image,"landmark")
-			#landmarks.each do |landmark|
-				#a = @vision_image.vision_landmarks.create(name: landmark[0], score: landmark[1], location: landmark[2])
-				#latlng = a.location.scan(/[+\-]?\d{1,3}.\d{1,14}/)
-				#lat = latlng[0]
-				#lng = latlng[1]
-				#a.latitude = lat
-				#a.longitude = lng
-				#a.save
-			#end
 			if landmarks = Vision.get_image_data(@vision_image.image,"landmark").present?
 				landmarks = Vision.get_image_data(@vision_image.image,"landmark").flatten
 				@vision_image.vision_landmarks.create(

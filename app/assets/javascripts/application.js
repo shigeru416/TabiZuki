@@ -49,6 +49,7 @@ $(document).ready(function(){
   });
 });
 
+/*投稿詳細スライドショー*/
 $(document).ready(function(){
   $('.bxslider1').bxSlider({
     auto: false,           // 自動スライド
