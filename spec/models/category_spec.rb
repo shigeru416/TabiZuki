@@ -24,4 +24,11 @@ RSpec.describe Category, type: :model do
 		    end
 		end
 	end
+	describe 'アソシエーションのテスト' do
+	    context 'Postモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(Category.reflect_on_association(:posts).macro).to eq :has_many
+	      end
+		end
+	end
 end

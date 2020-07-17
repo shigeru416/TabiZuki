@@ -47,10 +47,40 @@ RSpec.describe User, type: :model do
 	end
 
 	describe 'アソシエーションのテスト' do
-    context 'Postモデルとの関係' do
-      it '1:Nとなっている' do
-        expect(User.reflect_on_association(:posts).macro).to eq :has_many
-      end
-    end
-  end
+	    context 'Postモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:posts).macro).to eq :has_many
+	      end
+		end
+
+		context 'Favoriteモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:favorites).macro).to eq :has_many
+	      end
+		end
+
+		context 'WannagoListモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:wannago_lists).macro).to eq :has_many
+	      end
+		end
+
+		context 'Chatモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:chats).macro).to eq :has_many
+	      end
+		end
+
+		context 'BrowsingHistoryモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:browsing_histories).macro).to eq :has_many
+	      end
+		end
+
+		context 'PostCommentモデルとの関係' do
+	      it '1:Nとなっている' do
+	        expect(User.reflect_on_association(:post_comments).macro).to eq :has_many
+	      end
+		end
+	end
 end

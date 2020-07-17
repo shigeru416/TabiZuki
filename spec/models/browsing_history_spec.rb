@@ -32,4 +32,18 @@ RSpec.describe BrowsingHistory, type: :model do
 		    end
 		end
 	end
+
+	describe 'アソシエーションのテスト' do
+	    context 'Postモデルとの関係' do
+	      it 'N:1となっている' do
+	        expect(BrowsingHistory.reflect_on_association(:post).macro).to eq :belongs_to
+	      end
+		end
+
+		context 'Userモデルとの関係' do
+	      it 'N:1となっている' do
+	        expect(BrowsingHistory.reflect_on_association(:user).macro).to eq :belongs_to
+	      end
+		end
+	end
 end
