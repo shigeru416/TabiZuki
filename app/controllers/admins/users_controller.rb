@@ -17,7 +17,7 @@ class Admins::UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			render :show
+			redirect_to admins_user_path(@user)
 		else
 			render :edit
 		end
