@@ -7,26 +7,75 @@ RSpec.describe "Homes", type: :request do
         before do
           get about_path
         end
-        it "成功" do
-          expect(response).to have_http_status(:success)
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
         end
     end
   end
-  describe "GET /tabizukimembership" do
+
+  describe "メンバーシップページ" do
+    context "メンバーシップページが表示される" do
+        before do
+          get tabizukimembership_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 
-  describe "GET /home" do
+  describe "トップページ" do
+    context "トップページが表示される" do
+        before do
+          get root_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 
-  describe "GET /timeline" do
+  describe "タイムラインページ" do
+    context "タイムラインページが表示される" do
+        before do
+          get timeline_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 
-  describe "GET /favorites" do
+  describe "お気に入りページ" do
+    context "お気に入りページが表示される" do
+        before do
+          get favorites_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 
-  describe "GET /ranking" do
+  describe "ランキングページ" do
+    context "ランキングページが表示される" do
+        before do
+          get ranking_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 
-  describe "GET /new" do
+  describe "新しい投稿ページ" do
+    context "新しい投稿ページが表示される" do
+        before do
+          get new_path
+        end
+        it "リクエストは200 OKとなること" do
+          expect(response.status).to eq 200
+        end
+    end
   end
 end
