@@ -1,12 +1,11 @@
 class Category < ApplicationRecord
-# --------------------------------------
-# Relations
-# --------------------------------------
-	has_many :posts, dependent: :destroy
+  # --------------------------------------
+  # Relations
+  # --------------------------------------
+  has_many :posts, dependent: :destroy
 
-# --------------------------------------
-# Validations
-# --------------------------------------
-	validates :name, presence: true
-
+  # --------------------------------------
+  # Validations
+  # --------------------------------------
+  validates :name, presence: true
 end

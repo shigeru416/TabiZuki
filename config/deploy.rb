@@ -5,7 +5,7 @@ set :application, "TabiZuki"
 set :repo_url, "https://github.com/shigeru416/TabiZuki.git"
 set :deploy_to, "/home/ec2-user/TabiZuki"
 set :rbenv_ruby, '2.5.7'
-set :linked_files, %w{config/master.key .env}
+set :linked_files, %w(config/master.key .env)
 append :linked_dirs, "log", "public/system", "tmp"
 
 # Default branch is :master

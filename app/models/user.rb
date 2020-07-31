@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-# --------------------------------------
-# Relations
-# --------------------------------------
+  # --------------------------------------
+  # Relations
+  # --------------------------------------
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :wannago_lists, dependent: :destroy
@@ -19,11 +19,11 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
-# --------------------------------------
-# Validations
-# --------------------------------------
-  validates :name, presence: true, length: {maximum: 20}
-  validates :introduction, length: {maximum: 50}
+  # --------------------------------------
+  # Validations
+  # --------------------------------------
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :introduction, length: { maximum: 50 }
 
   attachment :image, destroy: false
 

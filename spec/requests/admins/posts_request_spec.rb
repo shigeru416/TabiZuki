@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Admins::Posts", type: :request do
-
   describe "GET /index" do
     it "returns http success" do
       get "/admins/posts/index"
@@ -36,5 +35,4 @@ RSpec.describe "Admins::Posts", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Relationships", type: :request do
-
   describe "GET /create" do
   end
 
@@ -13,5 +12,4 @@ RSpec.describe "Relationships", type: :request do
 
   describe "GET /followed" do
   end
-
 end

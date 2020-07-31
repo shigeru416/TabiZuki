@@ -1,71 +1,71 @@
 require 'rails_helper'
 
 RSpec.describe Chat, type: :model do
-	describe 'データのテスト' do
-		context "データが正しく保存される" do
-			before do
-				@user = User.new
-				@user.id = 1
-				@user.email = "example@gmail.com"
-				@user.password = "example"
-				@user.name = "example"
-				@user.introduction = "example"
-				@user.save
+  describe 'データのテスト' do
+    context "データが正しく保存される" do
+      before do
+        @user = User.new
+        @user.id = 1
+        @user.email = "example@gmail.com"
+        @user.password = "example"
+        @user.name = "example"
+        @user.introduction = "example"
+        @user.save
 
-				@room = Room.new
-				@room.id = 1
-				@room.save
+        @room = Room.new
+        @room.id = 1
+        @room.save
 
-				@chat = Chat.new
-				@chat.user_id = @user.id
-				@chat.room_id = @room.id
-				@chat.message = "example"
-				@chat.save
-			end
-			it "全て入力してあるので保存される" do
-		        expect(@chat).to be_valid
-		    end
-		end
+        @chat = Chat.new
+        @chat.user_id = @user.id
+        @chat.room_id = @room.id
+        @chat.message = "example"
+        @chat.save
+      end
 
-		context "データが正しく保存されない" do
-			before do
-				@user = User.new
-				@user.id = 1
-				@user.email = "example@gmail.com"
-				@user.password = "example"
-				@user.name = "example"
-				@user.introduction = "example"
-				@user.save
+      it "全て入力してあるので保存される" do
+        expect(@chat).to be_valid
+      end
+    end
 
-				@room = Room.new
-				@room.id = 1
-				@room.save
+    context "データが正しく保存されない" do
+      before do
+        @user = User.new
+        @user.id = 1
+        @user.email = "example@gmail.com"
+        @user.password = "example"
+        @user.name = "example"
+        @user.introduction = "example"
+        @user.save
 
-				@chat = Chat.new
-				@chat.user_id = @user.id
-				@chat.room_id = @room.id
-				@chat.message = ""
-				@chat.save
-			end
-			it "messageが空欄なので保存されない" do
-		        expect(@chat).to be_invalid
-		    end
-		end
-	end
+        @room = Room.new
+        @room.id = 1
+        @room.save
 
-	describe 'アソシエーションのテスト' do
-	    context 'Userモデルとの関係' do
-	      it 'N:1となっている' do
-	        expect(Chat.reflect_on_association(:user).macro).to eq :belongs_to
-	      end
-		end
+        @chat = Chat.new
+        @chat.user_id = @user.id
+        @chat.room_id = @room.id
+        @chat.message = ""
+        @chat.save
+      end
 
-		context 'Roomモデルとの関係' do
-	      it 'N:1となっている' do
-	        expect(Chat.reflect_on_association(:room).macro).to eq :belongs_to
-	      end
-		end
-	end
+      it "messageが空欄なので保存されない" do
+        expect(@chat).to be_invalid
+      end
+    end
+  end
 
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Chat.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
 
+    context 'Roomモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Chat.reflect_on_association(:room).macro).to eq :belongs_to
+      end
+    end
+  end
 end

@@ -82,9 +82,8 @@ gem 'acts-as-taggable-on'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'kaminari'
+gem 'rubocop-airbnb'
 gem 'dotenv-rails'
-gem 'rubocop-rails'
-gem 'rubocop', require: false
 group :production do
   gem 'mysql2'
 end

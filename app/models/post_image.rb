@@ -1,9 +1,8 @@
 class PostImage < ApplicationRecord
-# --------------------------------------
-# Relations
-# --------------------------------------
-	belongs_to :post
+  # --------------------------------------
+  # Relations
+  # --------------------------------------
+  belongs_to :post
 
-  	attachment :image
-
+  attachment :image
 end

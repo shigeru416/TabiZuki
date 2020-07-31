@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
-
   describe "GET /new" do
   end
 
@@ -19,5 +18,4 @@ RSpec.describe "Posts", type: :request do
 
   describe "GET /destroy" do
   end
-
 end
